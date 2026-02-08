@@ -265,17 +265,19 @@
   const track=document.getElementById('ssTrack'),dots=document.getElementById('ssDots');
   if(track&&dots){
     const cards=track.querySelectorAll('.ss-card'),len=cards.length;
-    let cur=0,timer;
-    for(let i=0;i<len;i++){const d=document.createElement('span');if(i===0)d.classList.add('active');d.addEventListener('click',()=>go(i));dots.appendChild(d)}
+    let cur=0,timer,resumeTimer,dragging=false,programScroll=false;
+    for(let i=0;i<len;i++){const d=document.createElement('span');if(i===0)d.classList.add('active');d.addEventListener('click',()=>{pauseAndResume(8000);go(i)});dots.appendChild(d)}
     const allDots=dots.querySelectorAll('span');
-    function go(i){cur=i;cards[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});upDots()}
+    function go(i){cur=i;programScroll=true;cards[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});upDots();setTimeout(()=>{programScroll=false},600)}
     function upDots(){allDots.forEach((d,j)=>d.classList.toggle('active',j===cur))}
     function next(){cur=(cur+1)%len;go(cur)}
-    function startAuto(){timer=setInterval(next,4500)}
-    function stopAuto(){clearInterval(timer)}
-    track.addEventListener('scroll',()=>{const sl=track.scrollLeft,tw=track.scrollWidth-track.clientWidth;if(tw>0){const idx=Math.round(sl/(tw/(len-1)));if(idx!==cur){cur=Math.min(idx,len-1);upDots()}}});
-    track.addEventListener('mouseenter',stopAuto);track.addEventListener('mouseleave',startAuto);
-    track.addEventListener('touchstart',stopAuto,{passive:true});track.addEventListener('touchend',()=>setTimeout(startAuto,3000));
+    function startAuto(){stopAuto();timer=setInterval(next,4500)}
+    function stopAuto(){clearInterval(timer);timer=null}
+    function pauseAndResume(ms){stopAuto();clearTimeout(resumeTimer);resumeTimer=setTimeout(startAuto,ms)}
+    track.addEventListener('scroll',()=>{if(programScroll)return;const sl=track.scrollLeft,tw=track.scrollWidth-track.clientWidth;if(tw>0){const idx=Math.round(sl/(tw/(len-1)));if(idx!==cur){cur=Math.min(Math.max(idx,0),len-1);upDots()}}});
+    track.addEventListener('mouseenter',stopAuto);track.addEventListener('mouseleave',()=>pauseAndResume(1000));
+    track.addEventListener('touchstart',()=>{dragging=true;stopAuto();clearTimeout(resumeTimer)},{passive:true});
+    track.addEventListener('touchend',()=>{dragging=false;pauseAndResume(8000)},{passive:true});
     startAuto();
   }
 });
