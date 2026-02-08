@@ -268,7 +268,7 @@
     let cur=0,timer,resumeTimer,dragging=false,programScroll=false;
     for(let i=0;i<len;i++){const d=document.createElement('span');if(i===0)d.classList.add('active');d.addEventListener('click',()=>{pauseAndResume(8000);go(i)});dots.appendChild(d)}
     const allDots=dots.querySelectorAll('span');
-    function go(i){cur=i;programScroll=true;cards[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});upDots();setTimeout(()=>{programScroll=false},600)}
+    function go(i){cur=i;programScroll=true;track.scrollTo({left:cards[i].offsetLeft-track.offsetLeft-(track.clientWidth-cards[i].offsetWidth)/2,behavior:'smooth'});upDots();setTimeout(()=>{programScroll=false},600)}
     function upDots(){allDots.forEach((d,j)=>d.classList.toggle('active',j===cur))}
     function next(){cur=(cur+1)%len;go(cur)}
     function startAuto(){stopAuto();timer=setInterval(next,4500)}
