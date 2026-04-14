@@ -39,9 +39,22 @@
     .sidebar-overlay.active{display:block}
     .links{display:flex;align-items:center;gap:24px}
     .links a{color:#d9def7;text-decoration:none}.links a:hover{opacity:.8}
-    .lang-switch{display:flex;gap:8px}
-    .lang-switch button{background:transparent;border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:12px;padding:6px 12px;cursor:pointer;font-size:14px;transition:all 0.3s ease}
-    .lang-switch button.active{background:rgba(255,255,255,.1);border-color:#fff}
+    .lang-switch{display:none}
+    .lang-dropdown{position:relative}
+    .lang-trigger{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);color:#fff;padding:8px 14px;border-radius:12px;cursor:pointer;font-size:14px;font-weight:500;transition:all .2s;font-family:inherit}
+    .lang-trigger:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3)}
+    .lang-trigger .lang-flag{font-size:18px;line-height:1}
+    .lang-trigger .lang-chevron{width:14px;height:14px;transition:transform .2s;opacity:.7}
+    .lang-trigger[aria-expanded="true"] .lang-chevron{transform:rotate(180deg)}
+    .lang-menu{position:absolute;top:calc(100% + 8px);right:0;min-width:170px;background:rgba(20,20,30,0.98);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:6px;list-style:none;margin:0;opacity:0;pointer-events:none;transform:translateY(-6px);transition:all .2s;z-index:1000;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+    .lang-menu.open{opacity:1;pointer-events:auto;transform:translateY(0)}
+    .lang-option{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;cursor:pointer;font-size:14px;color:#d9def7;transition:background .15s}
+    .lang-option:hover{background:rgba(255,255,255,.06);color:#fff}
+    .lang-option.active{background:rgba(185,74,142,.18);color:#fff}
+    .lang-option .lang-flag{font-size:18px;line-height:1}
+    .lang-option .lang-name{flex:1}
+    .lang-option .check{width:14px;height:14px;opacity:0;color:var(--accent)}
+    .lang-option.active .check{opacity:1}
     .hero{background:radial-gradient(1200px 800px at 10% 10%, #2a1050 0%, #120c2c 60%, #0a0a14 100%), linear-gradient(135deg, var(--violet) 0%, var(--mag) 100%);background-blend-mode:overlay}
     .hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;padding:56px 0 72px}
     .hero-copy p{font-size:18px}
@@ -130,6 +143,20 @@
       <button id="btn-de">DE</button>
       <button id="btn-es">ES</button>
       <button id="btn-fr">FR</button>
+    </div>
+    <div class="lang-dropdown">
+      <button class="lang-trigger" id="langTrigger" aria-expanded="false" aria-haspopup="listbox" aria-label="Language">
+        <span class="lang-flag" id="langTriggerFlag">🇮🇹</span>
+        <span class="lang-code" id="langTriggerCode">IT</span>
+        <svg class="lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <ul class="lang-menu" id="langMenu" role="listbox">
+        <li class="lang-option active" data-lang="it" role="option"><span class="lang-flag">🇮🇹</span><span class="lang-name">Italiano</span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></li>
+        <li class="lang-option" data-lang="en" role="option"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></li>
+        <li class="lang-option" data-lang="de" role="option"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></li>
+        <li class="lang-option" data-lang="es" role="option"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></li>
+        <li class="lang-option" data-lang="fr" role="option"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></li>
+      </ul>
     </div>
   </div>
 </header>
@@ -267,8 +294,18 @@
       "footer.terms":"Conditions","footer.privacy":"Confidentialité","footer.contact":"Contact"
     }
   };
-  function setLang(l){document.querySelectorAll("[data-i18n]").forEach(e=>{const k=e.getAttribute("data-i18n");if(dict[l]&&dict[l][k])e.innerHTML=dict[l][k]});document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));document.getElementById('btn-'+l).classList.add('active');document.documentElement.lang=l;localStorage.setItem('preferredLang',l)}
-  document.addEventListener('DOMContentLoaded',function(){const m=document.getElementById('menuToggle'),s=document.getElementById('sidebar'),o=document.getElementById('overlay');function t(){m.classList.toggle('active');s.classList.toggle('active');o.classList.toggle('active')}if(m)m.addEventListener('click',t);if(o)o.addEventListener('click',t);document.addEventListener('keydown',e=>{if(e.key==='Escape'&&s&&s.classList.contains('active'))t()});document.getElementById('btn-it').addEventListener('click',()=>setLang('it'));document.getElementById('btn-en').addEventListener('click',()=>setLang('en'));document.getElementById('btn-de').addEventListener('click',()=>setLang('de'));document.getElementById('btn-es').addEventListener('click',()=>setLang('es'));document.getElementById('btn-fr').addEventListener('click',()=>setLang('fr'));setLang(localStorage.getItem('preferredLang')||'it');
+  const LANG_META={it:{flag:'🇮🇹',code:'IT',name:'Italiano'},en:{flag:'🇬🇧',code:'EN',name:'English'},de:{flag:'🇩🇪',code:'DE',name:'Deutsch'},es:{flag:'🇪🇸',code:'ES',name:'Español'},fr:{flag:'🇫🇷',code:'FR',name:'Français'}};
+  function setLang(l){document.querySelectorAll("[data-i18n]").forEach(e=>{const k=e.getAttribute("data-i18n");if(dict[l]&&dict[l][k])e.innerHTML=dict[l][k]});document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));const oldBtn=document.getElementById('btn-'+l);if(oldBtn)oldBtn.classList.add('active');const meta=LANG_META[l];if(meta){const tf=document.getElementById('langTriggerFlag'),tc=document.getElementById('langTriggerCode');if(tf)tf.textContent=meta.flag;if(tc)tc.textContent=meta.code;document.querySelectorAll('.lang-option').forEach(o=>o.classList.toggle('active',o.dataset.lang===l))}document.documentElement.lang=l;localStorage.setItem('preferredLang',l)}
+  document.addEventListener('DOMContentLoaded',function(){const m=document.getElementById('menuToggle'),s=document.getElementById('sidebar'),o=document.getElementById('overlay');function t(){m.classList.toggle('active');s.classList.toggle('active');o.classList.toggle('active')}if(m)m.addEventListener('click',t);if(o)o.addEventListener('click',t);document.addEventListener('keydown',e=>{if(e.key==='Escape'&&s&&s.classList.contains('active'))t()});document.getElementById('btn-it').addEventListener('click',()=>setLang('it'));document.getElementById('btn-en').addEventListener('click',()=>setLang('en'));document.getElementById('btn-de').addEventListener('click',()=>setLang('de'));document.getElementById('btn-es').addEventListener('click',()=>setLang('es'));document.getElementById('btn-fr').addEventListener('click',()=>setLang('fr'));
+  /* Language dropdown */
+  const langTrigger=document.getElementById('langTrigger'),langMenu=document.getElementById('langMenu');
+  if(langTrigger&&langMenu){
+    langTrigger.addEventListener('click',e=>{e.stopPropagation();const isOpen=langMenu.classList.toggle('open');langTrigger.setAttribute('aria-expanded',isOpen?'true':'false')});
+    document.querySelectorAll('.lang-option').forEach(opt=>{opt.addEventListener('click',()=>{setLang(opt.dataset.lang);langMenu.classList.remove('open');langTrigger.setAttribute('aria-expanded','false')})});
+    document.addEventListener('click',e=>{if(!langTrigger.contains(e.target)&&!langMenu.contains(e.target)){langMenu.classList.remove('open');langTrigger.setAttribute('aria-expanded','false')}});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&langMenu.classList.contains('open')){langMenu.classList.remove('open');langTrigger.setAttribute('aria-expanded','false')}});
+  }
+  setLang(localStorage.getItem('preferredLang')||'it');
   /* Screenshot carousel */
   const track=document.getElementById('ssTrack'),dots=document.getElementById('ssDots');
   if(track&&dots){
