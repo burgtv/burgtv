@@ -7,7 +7,7 @@
   <link rel="icon" href="/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#0b0b0c;--text:#fff;--muted:#c9c9d1;--accent:#B94A8E;--accent2:#7B4397;--border:rgba(255,255,255,.12)}
+    :root{--bg:#0b0b0c;--text:#fff;--muted:#c9c9d1;--accent:#B94A8E;--accent2:#7B4397;--border:rgba(255,255,255,.12);--warn:#ff9b6f}
     *{box-sizing:border-box;margin:0;padding:0}
     body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.8}
     .nav{position:sticky;top:0;background:rgba(10,10,20,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);z-index:100;padding:0 20px}
@@ -40,7 +40,7 @@
     h2{font-size:1.4rem;margin:32px 0 12px;color:#fff}
     h3{font-size:1.1rem;margin:20px 0 8px;color:var(--accent)}
     p,li{color:var(--muted)}
-    ul{margin:0 0 18px 22px}
+    ul,ol{margin:0 0 18px 22px}
     .card{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:12px;padding:28px;margin-top:20px}
     a.link{color:#B94A8E;text-decoration:none;border-bottom:1px dotted rgba(255,255,255,.25)}
     a.link:hover{color:#fff;border-bottom-color:#fff}
@@ -48,9 +48,21 @@
     .highlight-box{background:rgba(185,74,142,0.1);border:1px solid rgba(185,74,142,0.3);border-radius:10px;padding:20px;margin:16px 0}
     .highlight-box p{margin:8px 0}
     .highlight-box strong{color:var(--accent)}
-    .important-clause{background:rgba(255,193,7,0.1);border:1px solid rgba(255,193,7,0.3);border-radius:10px;padding:20px;margin:16px 0}
-    .important-clause p{color:#ffd54f}
-    @media(max-width:768px){.lang-switch button{padding:4px 8px;font-size:12px}h1{font-size:1.8rem}}
+    .warn-box{background:rgba(255,155,111,0.08);border:1px solid rgba(255,155,111,0.4);border-radius:10px;padding:20px;margin:16px 0}
+    .warn-box strong{color:var(--warn)}
+    .warn-box p{color:#fff}
+    .product-section{margin:24px 0;padding:20px;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:10px}
+    .product-section h3{margin-top:0}
+    .price-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:0.9rem}
+    .price-table th,.price-table td{text-align:left;padding:10px;border-bottom:1px solid var(--border)}
+    .price-table th{color:var(--accent);font-size:0.85rem}
+    .toc{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:20px;margin:20px 0;font-size:0.9rem}
+    .toc ol{margin:0 0 0 20px;columns:2}
+    .toc li{color:var(--muted);padding:3px 0}
+    .toc a{color:var(--muted);text-decoration:none}
+    .toc a:hover{color:var(--accent)}
+    .legal-notice{font-size:0.85rem;font-style:italic;color:var(--muted);padding:10px;background:rgba(0,0,0,0.3);border-left:3px solid var(--accent);margin:12px 0}
+    @media(max-width:768px){.lang-switch button{padding:4px 8px;font-size:12px}h1{font-size:1.8rem};.toc ol{columns:1}}
   </style>
 </head>
 <body>
@@ -62,6 +74,10 @@
     <div class="sidebar-divider"></div>
     <a href="/legal/terms.html" class="active"><span>📄</span><span data-i18n="menu.terms">Termini di Servizio</span></a>
     <a href="/legal/privacy.html"><span>🔒</span><span data-i18n="menu.privacy">Privacy Policy</span></a>
+    <a href="/legal/cookies.html"><span>🍪</span><span data-i18n="menu.cookies">Cookie Policy</span></a>
+    <a href="/legal/aup.html"><span>📋</span><span data-i18n="menu.aup">Acceptable Use</span></a>
+    <a href="/legal/dmca.html"><span>©</span><span data-i18n="menu.dmca">DMCA</span></a>
+    <a href="/legal/delete-account.html"><span>🗑️</span><span data-i18n="menu.delete">Cancellazione Account</span></a>
     <a href="mailto:info@burgtv.com"><span>📧</span><span data-i18n="menu.contact">Contatti</span></a>
   </nav>
 </div>
@@ -82,436 +98,775 @@
   </div>
 </header>
 <div class="wrap">
-  <!-- ITALIANO -->
+
+  <!-- ==================== ITALIANO ==================== -->
   <div id="content-it" class="card">
-    <h1>Termini e Condizioni</h1>
-    <p class="update-date">Ultimo aggiornamento: 23 Dicembre 2025</p>
-    
-    <h2>1. Natura del Servizio</h2>
-    <p>BurgTV è un'<strong>applicazione software</strong> che funziona come <strong>media player</strong> per la riproduzione di contenuti multimediali.</p>
+    <h1>Termini e Condizioni di Servizio</h1>
+    <p class="update-date">Versione 2.0 — In vigore dal 14 aprile 2026</p>
+
+    <div class="warn-box">
+      <p><strong>⚠ AVVERTENZA IMPORTANTE — LEGGERE ATTENTAMENTE.</strong></p>
+      <p>BurgTV e' un'applicazione software di tipo media player. <strong>BurgTV NON fornisce, NON ospita, NON distribuisce e NON moderA alcun contenuto audiovisivo</strong>. L'applicazione e' una scatola vuota: e' esclusiva responsabilita' dell'Utente fornire i propri contenuti multimediali e assicurarsi di possedere i diritti legali per la loro riproduzione. Utilizzando il Servizio, l'Utente dichiara di accettare integralmente tali condizioni.</p>
+    </div>
+
+    <p>I presenti Termini e Condizioni di Servizio (i "<strong>Termini</strong>") costituiscono un accordo legalmente vincolante tra l'Utente (di seguito "<strong>Utente</strong>" o "<strong>Lei</strong>") e <strong>BurgTV</strong>, ditta individuale di Musa Bushi, con sede in Via Rinaldo Simen 18, 6900 Lugano, Svizzera ("<strong>BurgTV</strong>", "<strong>noi</strong>", "<strong>nostro</strong>"), in relazione all'utilizzo dell'applicazione BurgTV TV, dell'applicazione BurgTV Mobile e dei siti web burgtv.com e app.burgtv.com (congiuntamente, il "<strong>Servizio</strong>").</p>
+
+    <p>Accedendo o utilizzando il Servizio in qualsiasi forma, l'Utente conferma di aver letto, compreso e accettato integralmente i presenti Termini. L'Utente che non accetti i presenti Termini deve immediatamente astenersi dall'utilizzare il Servizio.</p>
+
+    <div class="toc">
+      <strong>Indice</strong>
+      <ol>
+        <li><a href="#it-t1">Natura del Servizio</a></li>
+        <li><a href="#it-t2">Esclusione di Contenuti</a></li>
+        <li><a href="#it-t3">Responsabilita' dell'Utente</a></li>
+        <li><a href="#it-t4">Requisiti di Eta'</a></li>
+        <li><a href="#it-t5">Account e Registrazione</a></li>
+        <li><a href="#it-t6">Prodotti, Piani e Prezzi</a></li>
+        <li><a href="#it-t7">Prova Gratuita</a></li>
+        <li><a href="#it-t8">Pagamenti</a></li>
+        <li><a href="#it-t9">Rinnovo Automatico</a></li>
+        <li><a href="#it-t10">Diritto di Recesso</a></li>
+        <li><a href="#it-t11">Politica di Rimborso</a></li>
+        <li><a href="#it-t12">Uso Consentito</a></li>
+        <li><a href="#it-t13">Divieti</a></li>
+        <li><a href="#it-t14">Sospensione e Revoca</a></li>
+        <li><a href="#it-t15">Proprieta' Intellettuale</a></li>
+        <li><a href="#it-t16">Procedura DMCA</a></li>
+        <li><a href="#it-t17">Garanzie e Disclaimer</a></li>
+        <li><a href="#it-t18">Limitazione di Responsabilita'</a></li>
+        <li><a href="#it-t19">Manleva</a></li>
+        <li><a href="#it-t20">Forza Maggiore</a></li>
+        <li><a href="#it-t21">Apple — Termini Supplementari</a></li>
+        <li><a href="#it-t22">Google Play — Termini Supplementari</a></li>
+        <li><a href="#it-t23">Amazon Appstore — Termini Supplementari</a></li>
+        <li><a href="#it-t24">Modifiche ai Termini</a></li>
+        <li><a href="#it-t25">Risoluzione delle Controversie</a></li>
+        <li><a href="#it-t26">Legge Applicabile e Foro</a></li>
+        <li><a href="#it-t27">Clausole Finali</a></li>
+        <li><a href="#it-t28">Contatti</a></li>
+      </ol>
+    </div>
+
+    <h2 id="it-t1">1. Natura del Servizio</h2>
+    <p>BurgTV e' un'<strong>applicazione software</strong> che funziona esclusivamente come <strong>lettore multimediale</strong> ("media player") per la riproduzione di contenuti audiovisivi forniti dall'Utente tramite fonti esterne di propria scelta.</p>
+    <p>L'applicazione consente all'Utente di:</p>
     <ul>
-      <li>BurgTV <strong>NON fornisce, ospita né distribuisce</strong> alcun contenuto audiovisivo.</li>
-      <li>L'utente utilizza esclusivamente contenuti propri o di terze parti di cui possiede i diritti.</li>
-      <li>BurgTV non è responsabile per i contenuti riprodotti dall'utente tramite l'applicazione.</li>
+      <li>Aggiungere proprie fonti multimediali (URL, playlist, credenziali di servizi di terze parti di cui l'Utente e' titolare legittimo);</li>
+      <li>Riprodurre i contenuti forniti da tali fonti tramite l'interfaccia utente;</li>
+      <li>Organizzare preferiti, cronologia e impostazioni personali;</li>
+      <li>Accedere a metadati pubblici (informazioni su film e serie da TMDB).</li>
     </ul>
 
-    <h2>2. Piani e Licenze</h2>
-    <p>BurgTV offre due tipologie di accesso alle funzionalità dell'applicazione:</p>
-    
+    <h2 id="it-t2">2. Esclusione di Contenuti</h2>
+    <div class="warn-box">
+      <p><strong>BurgTV non fornisce, non ospita, non distribuisce, non moderA e non controlla alcun contenuto audiovisivo.</strong></p>
+      <p>L'applicazione viene fornita come "scatola vuota": nessun contenuto multimediale e' preinstallato, preconfigurato o associato al Servizio. Qualsiasi contenuto riprodotto tramite l'applicazione e' fornito esclusivamente e direttamente dall'Utente o da terze parti estranee a BurgTV.</p>
+    </div>
+    <p>BurgTV non:</p>
+    <ul>
+      <li>Seleziona, cura o raccomanda contenuti specifici;</li>
+      <li>Verifica la legalita' dei contenuti riprodotti dall'Utente;</li>
+      <li>Monitora, indicizza o registra i contenuti visualizzati;</li>
+      <li>Ha alcun rapporto contrattuale o commerciale con fornitori di contenuti audiovisivi;</li>
+      <li>Trae beneficio economico dalla riproduzione di specifici contenuti.</li>
+    </ul>
+    <p>BurgTV si qualifica, sotto il profilo giuridico, come <strong>fornitore di un servizio di mero strumento tecnico neutro</strong>, analogamente ad altri media player software di uso generale.</p>
+
+    <h2 id="it-t3">3. Responsabilita' dell'Utente</h2>
+    <p>L'Utente e' l'<strong>unico ed esclusivo responsabile</strong> per:</p>
+    <ul>
+      <li>La liceita', legittimita' e appropriatezza dei contenuti riprodotti tramite il Servizio;</li>
+      <li>L'acquisizione di tutti i diritti, licenze e autorizzazioni necessari per la visualizzazione dei contenuti;</li>
+      <li>Il rispetto delle leggi sul diritto d'autore, sulla proprieta' intellettuale e su altre normative applicabili nel paese di utilizzo;</li>
+      <li>La scelta delle fonti multimediali e la verifica della loro legittimita';</li>
+      <li>La tutela e la riservatezza delle credenziali di servizi terzi utilizzate nell'app;</li>
+      <li>Ogni conseguenza legale, civile, amministrativa o penale derivante dall'uso improprio del Servizio.</li>
+    </ul>
+    <p>L'Utente manleva e tiene indenne BurgTV da qualsiasi pretesa, danno, sanzione o spesa derivante dalla violazione del presente articolo.</p>
+
+    <h2 id="it-t4">4. Requisiti di Eta'</h2>
+    <p>Il Servizio e' destinato esclusivamente a persone che abbiano compiuto almeno <strong>13 anni</strong>, o l'eta' minima prevista dalla legislazione del paese di residenza dell'Utente, se superiore. I minori di eta' (tra 13 e 18 anni, o tra 13 anni e l'eta' della maggiore eta' applicabile) devono utilizzare il Servizio sotto la supervisione e con il consenso di un genitore o tutore legale.</p>
+    <p>In alcune giurisdizioni l'eta' minima di accesso e' superiore (es. Unione Europea: 16 anni per consenso autonomo al trattamento dati, salvo leggi nazionali). L'Utente dichiara di soddisfare i requisiti di eta' applicabili.</p>
+
+    <h2 id="it-t5">5. Account e Registrazione</h2>
+    <p>Per utilizzare determinate funzionalita' del Servizio, puo' essere richiesta la registrazione di un account. L'Utente si impegna a:</p>
+    <ul>
+      <li>Fornire informazioni accurate, aggiornate e complete durante la registrazione;</li>
+      <li>Mantenere la riservatezza della password e non condividerla con terzi;</li>
+      <li>Notificare tempestivamente a BurgTV qualsiasi utilizzo non autorizzato dell'account;</li>
+      <li>Non creare piu' account per eludere sospensioni, revoche o limitazioni del periodo di prova;</li>
+      <li>Utilizzare il Servizio esclusivamente per fini personali e non commerciali.</li>
+    </ul>
+
+    <h2 id="it-t6">6. Prodotti, Piani e Prezzi</h2>
+    <p>BurgTV e' disponibile in due versioni distinte:</p>
+
+    <div class="product-section">
+      <h3>6.1 BurgTV TV (Amazon Fire TV, Android TV)</h3>
+      <table class="price-table">
+        <tr><th>Piano</th><th>Prezzo</th><th>Caratteristiche</th></tr>
+        <tr><td>Gratuito</td><td>CHF 0</td><td>Funzionalita' di base limitate</td></tr>
+        <tr><td>Abbonamento Annuale Premium</td><td>CHF 8.90/anno</td><td>Accesso completo, fino a 5 dispositivi, 7 giorni di prova gratuita</td></tr>
+        <tr><td>Licenza Permanente</td><td>CHF 25.90 una tantum</td><td>Accesso completo per la durata di disponibilita' commerciale del Servizio, fino a 5 dispositivi</td></tr>
+      </table>
+      <p>Pagamenti elaborati tramite <strong>Stripe</strong> da <a href="https://app.burgtv.com" class="link">app.burgtv.com</a>.</p>
+    </div>
+
+    <div class="product-section">
+      <h3>6.2 BurgTV Mobile (Android, iOS)</h3>
+      <table class="price-table">
+        <tr><th>Piano</th><th>Prezzo</th><th>Caratteristiche</th></tr>
+        <tr><td>Prova Gratuita</td><td>CHF 0</td><td>7 giorni con tutte le funzionalita' sbloccate</td></tr>
+        <tr><td>Abbonamento Mensile</td><td>CHF 1.50/mese</td><td>Accesso completo, 1 dispositivo</td></tr>
+        <tr><td>Abbonamento Annuale</td><td>CHF 4.90/anno</td><td>Accesso completo, 1 dispositivo</td></tr>
+        <tr><td>Licenza Permanente</td><td>CHF 14.90 una tantum</td><td>Accesso permanente, 1 dispositivo</td></tr>
+      </table>
+      <p>Pagamenti elaborati tramite <strong>Google Play Billing</strong> (Android) o <strong>Apple In-App Purchase</strong> (iOS).</p>
+    </div>
+
     <div class="highlight-box">
-      <h3>Abbonamento Annuale</h3>
-      <p>Accesso completo alle funzionalità dell'app BurgTV per <strong>12 mesi</strong>.</p>
-      <p><strong>Prezzo: CHF 8.90/anno</strong></p>
-      <p>Include 7 giorni di prova gratuita. Al termine della prova, l'abbonamento si attiva automaticamente se non cancellato.</p>
+      <p><strong>Chiarimento sulla "Licenza Permanente":</strong></p>
+      <p>La Licenza Permanente e' una licenza d'uso non esclusiva, non trasferibile e revocabile, valida per l'intera durata di disponibilita' commerciale del Servizio. Il pagamento una tantum e' riferito esclusivamente alla modalita' di pagamento e non costituisce diritto di accesso perpetuo indipendente dall'esistenza del Servizio. Qualora BurgTV cessasse l'attivita' commerciale del Servizio, la Licenza Permanente si estinguerebbe senza diritto a rimborso pro-rata, ferma restando la comunicazione con preavviso di almeno 90 giorni.</p>
     </div>
-    
+
+    <h2 id="it-t7">7. Prova Gratuita</h2>
+    <p><strong>BurgTV TV (annuale):</strong> periodo di prova gratuita di 7 giorni. Al termine del periodo di prova, l'abbonamento si attiva automaticamente salvo cancellazione prima della scadenza. L'Utente ricevera' un avviso via email almeno 48 ore prima della scadenza del periodo di prova.</p>
+    <p><strong>BurgTV Mobile:</strong> periodo di prova gratuita di 7 giorni dalla prima installazione, con tutte le funzionalita' sbloccate. Al termine del periodo di prova, l'applicazione si blocca completamente fino all'acquisto di un piano a pagamento.</p>
+    <p>Ciascun Utente ha diritto a un unico periodo di prova gratuita per ciascun prodotto. BurgTV si riserva il diritto di verificare e revocare periodi di prova multipli ottenuti tramite account o dispositivi fittizi.</p>
+
+    <h2 id="it-t8">8. Pagamenti</h2>
+    <p>I pagamenti per il Servizio sono elaborati da processori terzi certificati:</p>
+    <ul>
+      <li><strong>Stripe, Inc.</strong> per BurgTV TV (certificato PCI DSS Livello 1);</li>
+      <li><strong>Google Play Billing</strong> per BurgTV Mobile Android;</li>
+      <li><strong>Apple In-App Purchase</strong> per BurgTV Mobile iOS.</li>
+    </ul>
+    <p>BurgTV non memorizza in alcuna forma i dati completi delle carte di pagamento. I prezzi sono espressi in franchi svizzeri (CHF). L'importo finale addebitato all'Utente puo' variare in base al tasso di cambio del processore di pagamento e a commissioni applicate dalla banca o dallo store dell'Utente.</p>
+    <p>In caso di mancato pagamento o addebito respinto, BurgTV si riserva il diritto di sospendere immediatamente l'accesso al Servizio.</p>
+
+    <h2 id="it-t9">9. Rinnovo Automatico</h2>
+    <p>Gli abbonamenti mensili e annuali si rinnovano automaticamente alla scadenza di ciascun periodo, salvo cancellazione da parte dell'Utente.</p>
+
+    <h3>9.1 BurgTV TV (Stripe)</h3>
+    <ul>
+      <li>L'abbonamento annuale si rinnova automaticamente alla scadenza.</li>
+      <li>La cancellazione puo' essere effettuata dall'area personale su <a href="https://app.burgtv.com" class="link">app.burgtv.com</a> in qualsiasi momento.</li>
+      <li>La cancellazione ha effetto alla fine del periodo gia' pagato.</li>
+      <li>Nessun addebito ulteriore dopo la cancellazione.</li>
+    </ul>
+
+    <h3>9.2 BurgTV Mobile iOS (Apple App Store)</h3>
+    <div class="legal-notice">Il pagamento sara' addebitato sull'account Apple ID al momento della conferma dell'acquisto. L'abbonamento si rinnova automaticamente a meno che il rinnovo automatico sia disattivato almeno 24 ore prima della fine del periodo corrente. L'addebito per il rinnovo avviene entro le 24 ore precedenti la fine del periodo corrente. L'Utente puo' gestire gli abbonamenti e disattivare il rinnovo automatico accedendo alle Impostazioni dell'account sull'App Store dopo l'acquisto. Nessuna cancellazione dell'abbonamento corrente e' consentita durante il periodo di abbonamento attivo.</div>
+
+    <h3>9.3 BurgTV Mobile Android (Google Play)</h3>
+    <div class="legal-notice">Il pagamento sara' elaborato tramite l'account Google Play dell'Utente al momento della conferma dell'acquisto. L'abbonamento si rinnova automaticamente a meno che il rinnovo automatico sia disattivato almeno 24 ore prima della fine del periodo corrente. L'Utente puo' gestire gli abbonamenti e disattivare il rinnovo automatico accedendo a Google Play Store, Menu, Abbonamenti.</div>
+
+    <h2 id="it-t10">10. Diritto di Recesso (Consumatori UE)</h2>
+    <p>Ai sensi della Direttiva 2011/83/UE sui diritti dei consumatori, i consumatori residenti nell'Unione Europea hanno diritto di recedere dal contratto entro <strong>14 giorni</strong> dalla conclusione, senza dover fornire alcuna motivazione.</p>
+    <p>Tale diritto si applica esclusivamente agli acquisti web effettuati tramite Stripe (BurgTV TV). Per gli acquisti effettuati tramite Google Play o Apple App Store, si applicano le politiche di rimborso specifiche di tali piattaforme.</p>
+    <p><strong>Eccezioni al diritto di recesso:</strong> ai sensi dell'articolo 16(m) della Direttiva 2011/83/UE, il diritto di recesso non si applica alla fornitura di contenuti digitali non forniti su supporto materiale qualora l'esecuzione del contratto sia iniziata con l'espresso consenso preventivo dell'Utente e con la consapevolezza che avrebbe perso il diritto di recesso. L'Utente, al momento dell'acquisto, dichiara espressamente di acconsentire all'immediata attivazione del Servizio e di essere consapevole della perdita del diritto di recesso.</p>
+    <p>Per esercitare il diritto di recesso prima dell'attivazione del Servizio, l'Utente deve inviare comunicazione scritta a <a href="mailto:info@burgtv.com" class="link">info@burgtv.com</a> con oggetto "Recesso UE".</p>
+
+    <h2 id="it-t11">11. Politica di Rimborso</h2>
+    <p><strong>BurgTV TV (Stripe):</strong></p>
+    <ul>
+      <li>Nessun rimborso previsto dopo l'attivazione, salvo diritto di recesso UE di cui all'art. 10;</li>
+      <li>Nessun addebito durante il periodo di prova gratuita;</li>
+      <li>Cancellazioni prendono effetto alla fine del periodo gia' pagato;</li>
+      <li>In caso di malfunzionamento tecnico documentato e imputabile a BurgTV, l'Utente puo' richiedere rimborso pro-rata.</li>
+    </ul>
+    <p><strong>BurgTV Mobile:</strong></p>
+    <ul>
+      <li>I rimborsi sono gestiti direttamente da Google Play o Apple App Store secondo le loro politiche;</li>
+      <li>BurgTV non ha controllo diretto sui rimborsi elaborati dagli store;</li>
+      <li>Google Play: <a href="https://support.google.com/googleplay/answer/2479637" class="link" target="_blank" rel="noopener">politiche di rimborso</a>;</li>
+      <li>Apple App Store: <a href="https://support.apple.com/HT204084" class="link" target="_blank" rel="noopener">politiche di rimborso</a>.</li>
+    </ul>
+
+    <h2 id="it-t12">12. Uso Consentito</h2>
+    <p>L'Utente puo' utilizzare il Servizio esclusivamente per:</p>
+    <ul>
+      <li>Uso personale, privato e non commerciale;</li>
+      <li>Riproduzione di contenuti multimediali di cui l'Utente possiede diritti legali di visualizzazione;</li>
+      <li>Organizzazione dei propri contenuti multimediali privati.</li>
+    </ul>
+
+    <h2 id="it-t13">13. Divieti</h2>
+    <p>L'Utente si obbliga a non utilizzare il Servizio per:</p>
+    <ul>
+      <li>Violare diritti d'autore, marchi, brevetti o altri diritti di proprieta' intellettuale di terzi;</li>
+      <li>Accedere a contenuti per i quali l'Utente non possiede le necessarie autorizzazioni;</li>
+      <li>Effettuare attivita' illegali, fraudolente o diffamatorie;</li>
+      <li>Decompilare, disassemblare, sottoporre a reverse engineering o modificare l'applicazione;</li>
+      <li>Bypassare misure di sicurezza, limitazioni tecniche o funzionali del Servizio;</li>
+      <li>Utilizzare bot, script, scraper o altri sistemi automatizzati;</li>
+      <li>Rivendere, sublicenziare, noleggiare o trasferire l'accesso al Servizio a terzi;</li>
+      <li>Creare opere derivate basate sull'applicazione;</li>
+      <li>Impersonare altre persone o fornire informazioni false durante la registrazione;</li>
+      <li>Condividere credenziali di accesso con terzi non autorizzati;</li>
+      <li>Eludere limitazioni del periodo di prova mediante account o dispositivi multipli;</li>
+      <li>Utilizzare il Servizio in violazione di sanzioni economiche internazionali (OFAC USA, UE, Svizzera, Nazioni Unite).</li>
+    </ul>
+    <p>Per una descrizione dettagliata dei comportamenti consentiti e vietati, consultare l'<a href="/legal/aup.html" class="link">Acceptable Use Policy</a>.</p>
+
+    <h2 id="it-t14">14. Sospensione e Revoca</h2>
+    <p>BurgTV si riserva il diritto di sospendere o revocare, in qualsiasi momento e senza preavviso, l'accesso al Servizio in caso di:</p>
+    <ul>
+      <li>Violazione dei presenti Termini o dell'Acceptable Use Policy;</li>
+      <li>Utilizzo fraudolento o illecito del Servizio;</li>
+      <li>Richiesta di autorita' competenti;</li>
+      <li>Ricezione di reclami DMCA o notifiche di violazione di diritti di terzi;</li>
+      <li>Mancato pagamento o addebito respinto;</li>
+      <li>Ragioni di sicurezza o protezione di altri Utenti.</li>
+    </ul>
+    <p>In caso di revoca motivata da violazione dei Termini, nessun rimborso sara' dovuto.</p>
+
+    <h2 id="it-t15">15. Proprieta' Intellettuale</h2>
+    <p>L'applicazione BurgTV, inclusi senza limitazione: il codice sorgente, la struttura del database, il design dell'interfaccia, i loghi, i marchi, i nomi commerciali, la grafica, i testi, i suoni e le relative opere derivate, sono di esclusiva proprieta' di BurgTV o sono licenziati a BurgTV dai rispettivi titolari.</p>
+    <p>All'Utente viene concessa una <strong>licenza d'uso limitata, personale, non esclusiva, non trasferibile, non sublicenziabile e revocabile</strong> per l'utilizzo dell'applicazione in conformita' ai presenti Termini. Nessun altro diritto o titolo viene trasferito all'Utente.</p>
+    <p>I marchi "BurgTV" e i relativi loghi sono di proprieta' di BurgTV. L'uso non autorizzato e' vietato.</p>
+
+    <h2 id="it-t16">16. Procedura DMCA e Notifica di Violazione Diritti d'Autore</h2>
+    <p>BurgTV rispetta i diritti di proprieta' intellettuale e applica una procedura conforme al Digital Millennium Copyright Act statunitense (DMCA) e alla Direttiva UE 2001/29/CE sul diritto d'autore.</p>
+    <p>I titolari di diritti che ritengano che il proprio materiale sia stato utilizzato in modo illecito tramite il Servizio possono inviare una notifica formale all'agente DMCA designato:</p>
     <div class="highlight-box">
-      <h3>Licenza Permanente (pagamento una tantum)</h3>
-      <p>Pagamento unico per l'accesso alle funzionalità dell'app BurgTV.</p>
-      <p><strong>Prezzo: CHF 25.90 (una tantum)</strong></p>
+      <p><strong>DMCA Agent — BurgTV</strong></p>
+      <p>Email: <a href="mailto:info@burgtv.com" class="link">info@burgtv.com</a></p>
+      <p>Oggetto: "DMCA Notice"</p>
+      <p>Indirizzo postale: Via Rinaldo Simen 18, 6900 Lugano, Svizzera</p>
+    </div>
+    <p>Per la procedura dettagliata di notifica DMCA, controversia e repeat infringer policy, consultare la <a href="/legal/dmca.html" class="link">DMCA Policy dedicata</a>.</p>
+    <p><strong>Nota:</strong> BurgTV non ospita alcun contenuto audiovisivo. Le notifiche DMCA dovrebbero essere indirizzate direttamente al fornitore del contenuto o al provider che ospita il materiale asseritamente violativo.</p>
+
+    <h2 id="it-t17">17. Garanzie e Disclaimer</h2>
+    <div class="warn-box">
+      <p><strong>IL SERVIZIO E' FORNITO "COSI' COM'E'" E "COME DISPONIBILE", SENZA GARANZIE DI ALCUN TIPO, ESPRESSE O IMPLICITE.</strong></p>
+      <p>BurgTV declina ogni garanzia implicita di commerciabilita', idoneita' per un uso particolare, non violazione di diritti di terzi e accuratezza. Nei limiti consentiti dalla legge applicabile, BurgTV non garantisce che:</p>
+    </div>
+    <ul>
+      <li>Il Servizio soddisfi i requisiti specifici dell'Utente;</li>
+      <li>Il Servizio sia ininterrotto, tempestivo, sicuro o privo di errori;</li>
+      <li>I risultati ottenibili tramite l'uso del Servizio siano accurati o affidabili;</li>
+      <li>Eventuali errori dell'applicazione saranno corretti;</li>
+      <li>Il Servizio sia compatibile con tutti i dispositivi o configurazioni.</li>
+    </ul>
+
+    <h2 id="it-t18">18. Limitazione di Responsabilita'</h2>
+    <p>Nei limiti massimi consentiti dalla legge applicabile, BurgTV, i suoi dipendenti, fornitori e partner non saranno in alcun caso responsabili per:</p>
+    <ul>
+      <li>Danni diretti, indiretti, incidentali, speciali, consequenziali, punitivi o esemplari;</li>
+      <li>Perdita di profitti, perdita di dati, perdita di goodwill, interruzione dell'attivita' o danni morali;</li>
+      <li>Danni derivanti da utilizzo di contenuti di terze parti riprodotti tramite il Servizio;</li>
+      <li>Danni derivanti da violazioni di sicurezza non imputabili a BurgTV;</li>
+      <li>Costi di procurement di beni o servizi sostitutivi;</li>
+      <li>Utilizzo non autorizzato dell'account dell'Utente imputabile a negligenza dell'Utente stesso.</li>
+    </ul>
+    <p>Ove la legge applicabile non consenta l'esclusione totale di responsabilita', la responsabilita' complessiva di BurgTV sara' in ogni caso limitata al <strong>minore tra: (a) CHF 100; o (b) l'importo effettivamente pagato dall'Utente nei 12 mesi precedenti l'evento dannoso</strong>.</p>
+    <p>Tale limitazione si applica indipendentemente dalla natura giuridica dell'azione (contrattuale, extracontrattuale, statutaria o altra) e anche se BurgTV fosse stato avvertito della possibilita' di tali danni.</p>
+
+    <h2 id="it-t19">19. Manleva (Indemnification)</h2>
+    <p>L'Utente si impegna a tenere manlevato e indenne BurgTV, le sue affiliate, dirigenti, dipendenti e agenti da qualsiasi pretesa, domanda, responsabilita', danno, perdita, costo o spesa (incluse ragionevoli spese legali) derivanti da o connessi a:</p>
+    <ul>
+      <li>Violazione dei presenti Termini da parte dell'Utente;</li>
+      <li>Utilizzo del Servizio da parte dell'Utente;</li>
+      <li>Contenuti riprodotti dall'Utente tramite il Servizio;</li>
+      <li>Violazione di diritti di terzi da parte dell'Utente;</li>
+      <li>Negligenza o comportamento illecito dell'Utente.</li>
+    </ul>
+    <p>BurgTV si riserva il diritto di assumere la difesa esclusiva di qualsiasi pretesa soggetta a manleva a spese dell'Utente, con cooperazione da parte di quest'ultimo.</p>
+
+    <h2 id="it-t20">20. Forza Maggiore</h2>
+    <p>BurgTV non sara' responsabile per ritardi o inadempimenti causati da eventi di forza maggiore o di ordine pubblico, inclusi senza limitazione: catastrofi naturali, guerre, atti di terrorismo, sommosse, embarghi, atti di autorita' civili o militari, incendi, inondazioni, pandemie, interruzioni della rete Internet, blackout elettrici, attacchi informatici di larga scala, guasti di fornitori terzi, modifiche legislative che rendano impossibile o illegale la prestazione del Servizio.</p>
+
+    <h2 id="it-t21">21. Apple App Store — Termini Supplementari</h2>
+    <p>I seguenti termini si applicano esclusivamente agli Utenti che hanno scaricato l'applicazione BurgTV Mobile tramite Apple App Store:</p>
+    <ul>
+      <li>I presenti Termini sono conclusi tra l'Utente e BurgTV, non con Apple. Apple non e' responsabile per l'applicazione o il suo contenuto.</li>
+      <li>La licenza d'uso concessa all'Utente e' limitata all'uso dell'applicazione sui dispositivi Apple di proprieta' o controllati dall'Utente, come previsto dalle Usage Rules dell'App Store.</li>
+      <li>Apple non ha alcun obbligo di fornire servizi di manutenzione o supporto relativi all'applicazione.</li>
+      <li>In caso di mancata conformita' dell'applicazione a garanzie applicabili, l'Utente puo' notificare Apple e Apple rimborsera' il prezzo d'acquisto. Apple non avra' ulteriori obblighi di garanzia.</li>
+      <li>Apple non e' responsabile per: (i) reclami dell'Utente o di terzi relativi all'applicazione; (ii) responsabilita' di prodotto; (iii) reclami basati sul mancato rispetto di normative applicabili; (iv) reclami relativi a leggi sulla protezione dei consumatori; (v) reclami di violazione di diritti di proprieta' intellettuale di terzi.</li>
+      <li>L'Utente dichiara di non trovarsi in paesi soggetti a embargo del Governo statunitense o designati come "terrorist-supporting" e di non essere inserito in liste di soggetti interdetti o limitati dal Governo statunitense.</li>
+      <li><strong>Apple, Inc. e le sue consociate sono beneficiarie terze dei presenti Termini</strong>. Dopo l'accettazione dei Termini da parte dell'Utente, Apple avra' diritto (e si considerera' aver accettato tale diritto) di far valere i presenti Termini nei confronti dell'Utente in qualita' di beneficiaria terza.</li>
+    </ul>
+
+    <h2 id="it-t22">22. Google Play — Termini Supplementari</h2>
+    <p>Gli Utenti che hanno scaricato l'applicazione tramite Google Play sono soggetti anche ai termini di Google Play e alle politiche di Google. In caso di conflitto tra i presenti Termini e le politiche Google Play, prevarranno i presenti Termini limitatamente al rapporto tra l'Utente e BurgTV, mentre le politiche Google prevarranno nel rapporto tra Utente e Google.</p>
+
+    <h2 id="it-t23">23. Amazon Appstore — Termini Supplementari</h2>
+    <p>Gli Utenti che hanno scaricato l'applicazione tramite Amazon Appstore sono soggetti anche ai termini Amazon Appstore e alle politiche Amazon. Gli aggiornamenti e la distribuzione dell'applicazione possono essere gestiti da Amazon secondo le proprie politiche.</p>
+
+    <h2 id="it-t24">24. Modifiche ai Termini</h2>
+    <p>BurgTV puo' aggiornare i presenti Termini in qualsiasi momento per riflettere modifiche normative, tecniche, commerciali o organizzative. Le modifiche sostanziali saranno comunicate tramite email registrata e/o avviso nell'applicazione con preavviso di almeno <strong>30 giorni</strong> prima della loro entrata in vigore.</p>
+    <p>L'uso continuato del Servizio dopo l'entrata in vigore delle modifiche costituisce accettazione tacita delle stesse. L'Utente che non accetti le modifiche deve cessare l'utilizzo del Servizio prima della loro entrata in vigore. Nessun diritto al rimborso pro-rata e' previsto in caso di cessazione conseguente a modifiche dei Termini, salvo che le modifiche siano sostanzialmente sfavorevoli per l'Utente rispetto ai Termini preesistenti.</p>
+
+    <h2 id="it-t25">25. Risoluzione delle Controversie</h2>
+
+    <h3>25.1 Negoziazione preliminare (obbligatoria)</h3>
+    <p>Prima di avviare qualsiasi procedimento giudiziario, l'Utente si impegna a tentare una risoluzione amichevole della controversia notificando formalmente a BurgTV la natura della pretesa via email a <a href="mailto:info@burgtv.com" class="link">info@burgtv.com</a>. Le Parti si impegnano a cooperare in buona fede per almeno <strong>60 giorni</strong> prima di ricorrere al tribunale.</p>
+
+    <h3>25.2 Risoluzione alternativa (ODR UE)</h3>
+    <p>I consumatori residenti nell'Unione Europea possono ricorrere alla piattaforma europea di risoluzione online delle controversie (ODR): <a href="https://ec.europa.eu/consumers/odr" class="link" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.</p>
+
+    <h3>25.3 Clausola arbitrale per residenti USA</h3>
+    <div class="warn-box">
+      <p><strong>PER I RESIDENTI NEGLI STATI UNITI D'AMERICA:</strong></p>
+      <p>Qualsiasi controversia, reclamo o pretesa derivante da o relativa ai presenti Termini o al Servizio sara' risolta mediante <strong>arbitrato vincolante individuale</strong> secondo il Federal Arbitration Act (FAA), in conformita' alle regole commerciali dell'American Arbitration Association (AAA). L'arbitrato si terra' in inglese a Zurigo, Svizzera, o online. Nessuna class action, azione collettiva o arbitrato rappresentativo e' consentito. L'Utente rinuncia al diritto a un giudizio in tribunale e al diritto a un jury trial.</p>
+      <p>L'Utente puo' rinunciare alla presente clausola arbitrale inviando notifica scritta a <a href="mailto:info@burgtv.com" class="link">info@burgtv.com</a> entro 30 giorni dall'accettazione dei presenti Termini.</p>
     </div>
 
-    <div class="important-clause">
-      <p><strong>⚠️ Clausola importante sulla Licenza Permanente:</strong></p>
-      <p>La licenza permanente è una licenza d'uso non esclusiva dell'app BurgTV, valida per la durata di disponibilità commerciale del servizio. Il pagamento una tantum si riferisce esclusivamente alla modalità di pagamento e non costituisce un diritto di accesso perpetuo indipendente dall'esistenza del servizio.</p>
+    <h2 id="it-t26">26. Legge Applicabile e Foro Competente</h2>
+    <p>I presenti Termini sono regolati ed interpretati in conformita' al <strong>diritto svizzero sostantivo</strong>, con espressa esclusione delle norme sui conflitti di legge e della Convenzione delle Nazioni Unite sulla Vendita Internazionale di Merci (CISG).</p>
+    <p>Salva la clausola arbitrale per residenti USA di cui all'art. 25.3, il <strong>foro competente esclusivo</strong> per qualsiasi controversia e' quello di <strong>Lugano, Svizzera</strong>.</p>
+    <p>Le disposizioni imperative di legge a tutela dei consumatori previste dalla legislazione del paese di residenza del consumatore restano comunque applicabili ove piu' favorevoli.</p>
+
+    <h2 id="it-t27">27. Clausole Finali</h2>
+    <h3>27.1 Cessione</h3>
+    <p>L'Utente non puo' cedere i propri diritti e obblighi derivanti dai presenti Termini senza il previo consenso scritto di BurgTV. BurgTV puo' cedere liberamente i propri diritti e obblighi nell'ambito di riorganizzazioni aziendali, fusioni, acquisizioni o vendite di asset.</p>
+
+    <h3>27.2 Indipendenza delle clausole</h3>
+    <p>Qualora una clausola dei presenti Termini sia dichiarata nulla, invalida o inapplicabile, le restanti clausole conserveranno piena validita' ed efficacia.</p>
+
+    <h3>27.3 Mancata rinuncia</h3>
+    <p>La mancata applicazione o il ritardo nell'applicazione da parte di BurgTV di qualsiasi diritto o disposizione dei presenti Termini non costituisce rinuncia a tale diritto o disposizione.</p>
+
+    <h3>27.4 Intero accordo</h3>
+    <p>I presenti Termini, unitamente alla Privacy Policy, alla Cookie Policy, all'Acceptable Use Policy e alla DMCA Policy, costituiscono l'intero accordo tra l'Utente e BurgTV relativamente al Servizio e sostituiscono qualsiasi precedente accordo, comunicazione, dichiarazione o intesa, orale o scritta.</p>
+
+    <h3>27.5 Comunicazioni</h3>
+    <p>Ogni comunicazione formale da BurgTV all'Utente sara' inviata tramite email all'indirizzo registrato. Ogni comunicazione dall'Utente a BurgTV deve essere inviata a <a href="mailto:info@burgtv.com" class="link">info@burgtv.com</a>.</p>
+
+    <h3>27.6 Lingua del contratto</h3>
+    <p>I presenti Termini sono redatti in italiano e inglese. In caso di discrepanza tra le versioni, prevarra' la <strong>versione italiana</strong>, in quanto lingua del paese in cui ha sede il Titolare. Le versioni in tedesco, spagnolo e francese sono fornite a scopo informativo.</p>
+
+    <h3>27.7 Firma elettronica</h3>
+    <p>L'accettazione dei presenti Termini tramite click su checkbox, creazione di account, installazione dell'applicazione o utilizzo del Servizio equivale a firma elettronica vincolante ai sensi della legislazione applicabile (eIDAS UE, legislazione svizzera sulla firma elettronica).</p>
+
+    <h3>27.8 Controllo esportazioni</h3>
+    <p>L'applicazione e i dati associati possono essere soggetti a normative di controllo delle esportazioni (incluse, a titolo esemplificativo, le normative OFAC statunitensi, le normative UE e svizzere). L'Utente dichiara di non trovarsi in paesi o regioni soggette a embargo o sanzioni internazionali e di non essere inserito in liste di soggetti interdetti.</p>
+
+    <h2 id="it-t28">28. Contatti</h2>
+    <div class="highlight-box">
+      <p><strong>BurgTV</strong> — Ditta individuale di Musa Bushi</p>
+      <p>Via Rinaldo Simen 18, 6900 Lugano, Svizzera</p>
+      <p><strong>Email:</strong> <a href="mailto:info@burgtv.com" class="link">info@burgtv.com</a></p>
+      <p><strong>Sito web:</strong> <a href="https://burgtv.com" class="link">burgtv.com</a></p>
     </div>
-
-    <h2>3. Account e Dispositivi</h2>
-    <ul>
-      <li>Ogni licenza (annuale o permanente) può essere utilizzata su un massimo di <strong>5 dispositivi</strong>.</li>
-      <li>L'utente può gestire i propri dispositivi dalla dashboard su app.burgtv.com.</li>
-      <li>La condivisione delle credenziali di accesso con terzi non è consentita.</li>
-      <li>Un solo account per persona fisica o giuridica.</li>
-    </ul>
-
-    <h2>4. Pagamenti e Rimborsi</h2>
-    <ul>
-      <li>I pagamenti sono elaborati in modo sicuro tramite <strong>Stripe</strong>.</li>
-      <li>BurgTV non memorizza i dati delle carte di credito sui propri server.</li>
-      <li><strong>Nessun rimborso</strong> è previsto dopo l'attivazione dell'abbonamento annuale o l'acquisto della licenza permanente.</li>
-      <li>L'abbonamento annuale si rinnova automaticamente alla scadenza, salvo disdetta.</li>
-    </ul>
-
-    <h2>5. Uso Consentito</h2>
-    <ul>
-      <li>L'utente deve avere i <strong>diritti legali</strong> per visualizzare i contenuti riprodotti tramite l'app.</li>
-      <li>È vietato utilizzare il servizio per attività illegali o per violare diritti d'autore di terzi.</li>
-      <li>L'utente è l'unico responsabile per i contenuti che visualizza tramite l'applicazione.</li>
-    </ul>
-
-    <h2>6. Sospensione e Revoca</h2>
-    <p>BurgTV si riserva il diritto di sospendere o revocare l'accesso all'account in caso di:</p>
-    <ul>
-      <li>Violazione dei presenti Termini e Condizioni</li>
-      <li>Utilizzo abusivo o fraudolento del servizio</li>
-      <li>Condivisione non autorizzata delle credenziali</li>
-      <li>Attività illegali o dannose</li>
-    </ul>
-    <p>La sospensione o revoca può avvenire senza preavviso e senza diritto a rimborso.</p>
-
-    <h2>7. Limitazioni di Responsabilità</h2>
-    <ul>
-      <li>Il servizio è fornito "così com'è" senza garanzie di disponibilità continua o ininterrotta.</li>
-      <li>BurgTV non è responsabile per contenuti di terze parti visualizzati tramite l'app.</li>
-      <li>BurgTV non è responsabile per perdita di dati, playlist o impostazioni dell'utente.</li>
-      <li>BurgTV si riserva il diritto di modificare, sospendere o interrompere il servizio in qualsiasi momento.</li>
-    </ul>
-
-    <h2>8. Modifiche ai Termini</h2>
-    <p>BurgTV può aggiornare questi Termini e Condizioni in qualsiasi momento. Le modifiche significative saranno comunicate tramite email o nell'applicazione. L'uso continuato del servizio dopo le modifiche costituisce accettazione dei nuovi termini.</p>
-
-    <h2>9. Legge Applicabile</h2>
-    <p>I presenti Termini e Condizioni sono regolati dalla <strong>legge applicabile</strong> in base alla giurisdizione dell'utente.</p>
-    <p>Per qualsiasi controversia derivante dall'uso del servizio, sarà competente il foro del luogo di residenza dell'utente, salvo diversa disposizione di legge.</p>
-
-    <h2>10. Contatti</h2>
-    <p>Per domande, assistenza o segnalazioni: <a href="mailto:info@burgtv.com" class="link">info@burgtv.com</a></p>
   </div>
 
-  <!-- ENGLISH -->
+  <!-- ==================== ENGLISH ==================== -->
   <div id="content-en" class="card" style="display:none">
-    <h1>Terms and Conditions</h1>
-    <p class="update-date">Last updated: December 23, 2025</p>
-    
-    <h2>1. Nature of the Service</h2>
-    <p>BurgTV is a <strong>software application</strong> that functions as a <strong>media player</strong> for multimedia content playback.</p>
+    <h1>Terms and Conditions of Service</h1>
+    <p class="update-date">Version 2.0 — Effective April 14, 2026</p>
+
+    <div class="warn-box">
+      <p><strong>⚠ IMPORTANT NOTICE — READ CAREFULLY.</strong></p>
+      <p>BurgTV is a media player software application. <strong>BurgTV DOES NOT provide, DOES NOT host, DOES NOT distribute, and DOES NOT moderate any audiovisual content</strong>. The application is an empty shell: it is the User's sole responsibility to provide their own media content and to ensure they hold legal rights for its playback. By using the Service, the User agrees to accept these conditions in full.</p>
+    </div>
+
+    <p>These Terms and Conditions of Service (the "<strong>Terms</strong>") constitute a legally binding agreement between the User ("<strong>User</strong>" or "<strong>you</strong>") and <strong>BurgTV</strong>, a sole proprietorship of Musa Bushi, with registered office at Via Rinaldo Simen 18, 6900 Lugano, Switzerland ("<strong>BurgTV</strong>", "<strong>we</strong>", "<strong>our</strong>"), governing the use of the BurgTV TV application, BurgTV Mobile application, and the websites burgtv.com and app.burgtv.com (collectively, the "<strong>Service</strong>").</p>
+
+    <p>By accessing or using the Service in any form, the User confirms having read, understood, and fully accepted these Terms. Users who do not accept these Terms must immediately refrain from using the Service.</p>
+
+    <div class="toc">
+      <strong>Table of Contents</strong>
+      <ol>
+        <li><a href="#en-t1">Nature of the Service</a></li>
+        <li><a href="#en-t2">Content Exclusion</a></li>
+        <li><a href="#en-t3">User Responsibility</a></li>
+        <li><a href="#en-t4">Age Requirements</a></li>
+        <li><a href="#en-t5">Account and Registration</a></li>
+        <li><a href="#en-t6">Products, Plans, and Prices</a></li>
+        <li><a href="#en-t7">Free Trial</a></li>
+        <li><a href="#en-t8">Payments</a></li>
+        <li><a href="#en-t9">Automatic Renewal</a></li>
+        <li><a href="#en-t10">EU Right of Withdrawal</a></li>
+        <li><a href="#en-t11">Refund Policy</a></li>
+        <li><a href="#en-t12">Permitted Use</a></li>
+        <li><a href="#en-t13">Prohibitions</a></li>
+        <li><a href="#en-t14">Suspension and Termination</a></li>
+        <li><a href="#en-t15">Intellectual Property</a></li>
+        <li><a href="#en-t16">DMCA Procedure</a></li>
+        <li><a href="#en-t17">Warranties and Disclaimers</a></li>
+        <li><a href="#en-t18">Limitation of Liability</a></li>
+        <li><a href="#en-t19">Indemnification</a></li>
+        <li><a href="#en-t20">Force Majeure</a></li>
+        <li><a href="#en-t21">Apple — Supplementary Terms</a></li>
+        <li><a href="#en-t22">Google Play — Supplementary Terms</a></li>
+        <li><a href="#en-t23">Amazon Appstore — Supplementary Terms</a></li>
+        <li><a href="#en-t24">Changes to the Terms</a></li>
+        <li><a href="#en-t25">Dispute Resolution</a></li>
+        <li><a href="#en-t26">Governing Law and Jurisdiction</a></li>
+        <li><a href="#en-t27">Final Clauses</a></li>
+        <li><a href="#en-t28">Contact</a></li>
+      </ol>
+    </div>
+
+    <h2 id="en-t1">1. Nature of the Service</h2>
+    <p>BurgTV is a <strong>software application</strong> that functions exclusively as a <strong>media player</strong> for playback of audiovisual content supplied by the User from external sources of the User's own choosing.</p>
+    <p>The application enables the User to:</p>
     <ul>
-      <li>BurgTV <strong>does NOT provide, host, or distribute</strong> any audiovisual content.</li>
-      <li>Users exclusively use their own content or third-party content for which they hold the rights.</li>
-      <li>BurgTV is not responsible for content played by users through the application.</li>
+      <li>Add their own media sources (URLs, playlists, credentials for third-party services legitimately held by the User);</li>
+      <li>Play content provided by such sources through the user interface;</li>
+      <li>Organize favorites, history, and personal settings;</li>
+      <li>Access public metadata (movie and series information from TMDB).</li>
     </ul>
 
-    <h2>2. Plans and Licenses</h2>
-    <p>BurgTV offers two types of access to the application's features:</p>
-    
+    <h2 id="en-t2">2. Content Exclusion</h2>
+    <div class="warn-box">
+      <p><strong>BurgTV does not provide, does not host, does not distribute, does not moderate, and does not control any audiovisual content.</strong></p>
+      <p>The application is provided as an "empty shell": no media content is pre-installed, pre-configured, or associated with the Service. Any content played through the application is supplied exclusively and directly by the User or third parties unaffiliated with BurgTV.</p>
+    </div>
+    <p>BurgTV does not:</p>
+    <ul>
+      <li>Select, curate, or recommend specific content;</li>
+      <li>Verify the legality of content played by the User;</li>
+      <li>Monitor, index, or record viewed content;</li>
+      <li>Have any contractual or commercial relationship with audiovisual content providers;</li>
+      <li>Derive economic benefit from the playback of specific content.</li>
+    </ul>
+    <p>BurgTV qualifies, from a legal standpoint, as a <strong>provider of a neutral technical tool service</strong>, analogous to other general-purpose software media players.</p>
+
+    <h2 id="en-t3">3. User Responsibility</h2>
+    <p>The User is <strong>solely and exclusively responsible</strong> for:</p>
+    <ul>
+      <li>The legality, lawfulness, and appropriateness of content played through the Service;</li>
+      <li>Obtaining all rights, licenses, and authorizations necessary for viewing content;</li>
+      <li>Compliance with copyright, intellectual property, and other applicable laws in the country of use;</li>
+      <li>Selection of media sources and verification of their legitimacy;</li>
+      <li>Protection and confidentiality of third-party service credentials used in the app;</li>
+      <li>Any legal, civil, administrative, or criminal consequences arising from improper use of the Service.</li>
+    </ul>
+    <p>The User indemnifies and holds BurgTV harmless from any claim, damage, penalty, or expense arising from breach of this article.</p>
+
+    <h2 id="en-t4">4. Age Requirements</h2>
+    <p>The Service is intended exclusively for individuals who have reached the age of at least <strong>13 years</strong>, or the minimum age required by the legislation of the User's country of residence, if higher. Minors (between 13 and 18 years, or between 13 and the applicable age of majority) must use the Service under the supervision and with the consent of a parent or legal guardian.</p>
+    <p>In some jurisdictions, the minimum age of access is higher (e.g., European Union: 16 years for autonomous consent to data processing, subject to national laws). The User represents meeting applicable age requirements.</p>
+
+    <h2 id="en-t5">5. Account and Registration</h2>
+    <p>To use certain Service features, account registration may be required. The User undertakes to:</p>
+    <ul>
+      <li>Provide accurate, current, and complete information during registration;</li>
+      <li>Maintain password confidentiality and not share it with third parties;</li>
+      <li>Promptly notify BurgTV of any unauthorized use of the account;</li>
+      <li>Not create multiple accounts to evade suspensions, revocations, or trial period limitations;</li>
+      <li>Use the Service exclusively for personal, non-commercial purposes.</li>
+    </ul>
+
+    <h2 id="en-t6">6. Products, Plans, and Prices</h2>
+    <p>BurgTV is available in two distinct versions:</p>
+
+    <div class="product-section">
+      <h3>6.1 BurgTV TV (Amazon Fire TV, Android TV)</h3>
+      <table class="price-table">
+        <tr><th>Plan</th><th>Price</th><th>Features</th></tr>
+        <tr><td>Free</td><td>CHF 0</td><td>Basic limited features</td></tr>
+        <tr><td>Annual Premium Subscription</td><td>CHF 8.90/year</td><td>Full access, up to 5 devices, 7-day free trial</td></tr>
+        <tr><td>Permanent License</td><td>CHF 25.90 one-time</td><td>Full access for Service commercial availability period, up to 5 devices</td></tr>
+      </table>
+      <p>Payments processed via <strong>Stripe</strong> from <a href="https://app.burgtv.com" class="link">app.burgtv.com</a>.</p>
+    </div>
+
+    <div class="product-section">
+      <h3>6.2 BurgTV Mobile (Android, iOS)</h3>
+      <table class="price-table">
+        <tr><th>Plan</th><th>Price</th><th>Features</th></tr>
+        <tr><td>Free Trial</td><td>CHF 0</td><td>7 days with all features unlocked</td></tr>
+        <tr><td>Monthly Subscription</td><td>CHF 1.50/month</td><td>Full access, 1 device</td></tr>
+        <tr><td>Annual Subscription</td><td>CHF 4.90/year</td><td>Full access, 1 device</td></tr>
+        <tr><td>Permanent License</td><td>CHF 14.90 one-time</td><td>Permanent access, 1 device</td></tr>
+      </table>
+      <p>Payments processed via <strong>Google Play Billing</strong> (Android) or <strong>Apple In-App Purchase</strong> (iOS).</p>
+    </div>
+
     <div class="highlight-box">
-      <h3>Annual Subscription</h3>
-      <p>Full access to BurgTV app features for <strong>12 months</strong>.</p>
-      <p><strong>Price: CHF 8.90/year</strong></p>
-      <p>Includes 7-day free trial. After the trial, the subscription automatically activates if not cancelled.</p>
+      <p><strong>Clarification on "Permanent License":</strong></p>
+      <p>The Permanent License is a non-exclusive, non-transferable, and revocable use license valid for the entire period of commercial availability of the Service. The one-time payment refers exclusively to the payment method and does not constitute a right of perpetual access independent of Service existence. Should BurgTV cease commercial Service activity, the Permanent License would expire without pro-rata refund rights, subject to notice of at least 90 days.</p>
     </div>
-    
+
+    <h2 id="en-t7">7. Free Trial</h2>
+    <p><strong>BurgTV TV (annual):</strong> 7-day free trial period. At the end of the trial, the subscription activates automatically unless canceled before expiry. The User will receive an email notice at least 48 hours before trial expiry.</p>
+    <p><strong>BurgTV Mobile:</strong> 7-day free trial from first installation, with all features unlocked. At trial end, the application locks completely until a paid plan is purchased.</p>
+    <p>Each User is entitled to one free trial per product. BurgTV reserves the right to verify and revoke multiple trials obtained through fictitious accounts or devices.</p>
+
+    <h2 id="en-t8">8. Payments</h2>
+    <p>Payments for the Service are processed by certified third-party processors:</p>
+    <ul>
+      <li><strong>Stripe, Inc.</strong> for BurgTV TV (PCI DSS Level 1 certified);</li>
+      <li><strong>Google Play Billing</strong> for BurgTV Mobile Android;</li>
+      <li><strong>Apple In-App Purchase</strong> for BurgTV Mobile iOS.</li>
+    </ul>
+    <p>BurgTV does not store complete payment card data in any form. Prices are expressed in Swiss Francs (CHF). The final amount charged may vary based on the exchange rate of the payment processor and commissions charged by the User's bank or store.</p>
+    <p>In case of non-payment or declined charge, BurgTV reserves the right to immediately suspend Service access.</p>
+
+    <h2 id="en-t9">9. Automatic Renewal</h2>
+    <p>Monthly and annual subscriptions automatically renew at the end of each period, unless canceled by the User.</p>
+
+    <h3>9.1 BurgTV TV (Stripe)</h3>
+    <ul>
+      <li>Annual subscription automatically renews at expiry.</li>
+      <li>Cancellation can be performed from the personal area at <a href="https://app.burgtv.com" class="link">app.burgtv.com</a> at any time.</li>
+      <li>Cancellation takes effect at the end of the already paid period.</li>
+      <li>No further charges after cancellation.</li>
+    </ul>
+
+    <h3>9.2 BurgTV Mobile iOS (Apple App Store)</h3>
+    <div class="legal-notice">Payment will be charged to the Apple ID account upon confirmation of purchase. The subscription automatically renews unless auto-renewal is turned off at least 24 hours before the end of the current period. The renewal charge occurs within the 24 hours prior to the end of the current period. The User can manage subscriptions and turn off auto-renewal by accessing the User's Account Settings on the App Store after purchase. No cancellation of the current subscription is allowed during the active subscription period.</div>
+
+    <h3>9.3 BurgTV Mobile Android (Google Play)</h3>
+    <div class="legal-notice">Payment will be processed via the User's Google Play account upon confirmation of purchase. The subscription automatically renews unless auto-renewal is turned off at least 24 hours before the end of the current period. The User can manage subscriptions and turn off auto-renewal by accessing Google Play Store, Menu, Subscriptions.</div>
+
+    <h2 id="en-t10">10. EU Right of Withdrawal (Consumers)</h2>
+    <p>Under Directive 2011/83/EU on consumer rights, consumers residing in the European Union have the right to withdraw from the contract within <strong>14 days</strong> of conclusion, without providing any reason.</p>
+    <p>This right applies exclusively to web purchases made via Stripe (BurgTV TV). For purchases made via Google Play or Apple App Store, the specific refund policies of those platforms apply.</p>
+    <p><strong>Exceptions to withdrawal right:</strong> under Article 16(m) of Directive 2011/83/EU, the right of withdrawal does not apply to the supply of digital content not supplied on a tangible medium if contract performance has begun with the User's express prior consent and acknowledgment that the right of withdrawal would be lost. At purchase, the User expressly consents to immediate Service activation and acknowledges loss of withdrawal right.</p>
+    <p>To exercise the right of withdrawal before Service activation, the User must send written communication to <a href="mailto:info@burgtv.com" class="link">info@burgtv.com</a> with subject "EU Withdrawal".</p>
+
+    <h2 id="en-t11">11. Refund Policy</h2>
+    <p><strong>BurgTV TV (Stripe):</strong></p>
+    <ul>
+      <li>No refunds after activation, except for EU withdrawal right under Art. 10;</li>
+      <li>No charges during free trial period;</li>
+      <li>Cancellations take effect at the end of the already paid period;</li>
+      <li>In case of documented technical malfunction attributable to BurgTV, the User may request pro-rata refund.</li>
+    </ul>
+    <p><strong>BurgTV Mobile:</strong></p>
+    <ul>
+      <li>Refunds are managed directly by Google Play or Apple App Store per their policies;</li>
+      <li>BurgTV has no direct control over refunds processed by stores;</li>
+      <li>Google Play: <a href="https://support.google.com/googleplay/answer/2479637" class="link" target="_blank" rel="noopener">refund policies</a>;</li>
+      <li>Apple App Store: <a href="https://support.apple.com/HT204084" class="link" target="_blank" rel="noopener">refund policies</a>.</li>
+    </ul>
+
+    <h2 id="en-t12">12. Permitted Use</h2>
+    <p>The User may use the Service exclusively for:</p>
+    <ul>
+      <li>Personal, private, and non-commercial use;</li>
+      <li>Playback of media content for which the User holds legal viewing rights;</li>
+      <li>Organization of the User's private media content.</li>
+    </ul>
+
+    <h2 id="en-t13">13. Prohibitions</h2>
+    <p>The User undertakes not to use the Service to:</p>
+    <ul>
+      <li>Violate copyright, trademarks, patents, or other third-party intellectual property rights;</li>
+      <li>Access content for which the User does not hold necessary authorizations;</li>
+      <li>Carry out illegal, fraudulent, or defamatory activities;</li>
+      <li>Decompile, disassemble, reverse engineer, or modify the application;</li>
+      <li>Bypass security measures, technical or functional limitations of the Service;</li>
+      <li>Use bots, scripts, scrapers, or other automated systems;</li>
+      <li>Resell, sublicense, rent, or transfer Service access to third parties;</li>
+      <li>Create derivative works based on the application;</li>
+      <li>Impersonate other persons or provide false information during registration;</li>
+      <li>Share access credentials with unauthorized third parties;</li>
+      <li>Evade trial period limitations through multiple accounts or devices;</li>
+      <li>Use the Service in violation of international economic sanctions (US OFAC, EU, Swiss, UN).</li>
+    </ul>
+    <p>For a detailed description of permitted and prohibited conduct, see the <a href="/legal/aup.html" class="link">Acceptable Use Policy</a>.</p>
+
+    <h2 id="en-t14">14. Suspension and Termination</h2>
+    <p>BurgTV reserves the right to suspend or terminate Service access at any time without notice in case of:</p>
+    <ul>
+      <li>Breach of these Terms or the Acceptable Use Policy;</li>
+      <li>Fraudulent or unlawful use of the Service;</li>
+      <li>Request from competent authorities;</li>
+      <li>Receipt of DMCA complaints or third-party rights violation notices;</li>
+      <li>Non-payment or declined charge;</li>
+      <li>Security reasons or protection of other Users.</li>
+    </ul>
+    <p>In case of termination motivated by Terms breach, no refund will be owed.</p>
+
+    <h2 id="en-t15">15. Intellectual Property</h2>
+    <p>The BurgTV application, including without limitation: source code, database structure, interface design, logos, trademarks, trade names, graphics, texts, sounds, and derivative works, is the exclusive property of BurgTV or is licensed to BurgTV by the respective owners.</p>
+    <p>The User is granted a <strong>limited, personal, non-exclusive, non-transferable, non-sublicensable, and revocable use license</strong> to use the application in compliance with these Terms. No other right or title is transferred to the User.</p>
+    <p>The "BurgTV" trademarks and related logos are the property of BurgTV. Unauthorized use is prohibited.</p>
+
+    <h2 id="en-t16">16. DMCA Procedure and Copyright Infringement Notice</h2>
+    <p>BurgTV respects intellectual property rights and applies a procedure compliant with the US Digital Millennium Copyright Act (DMCA) and EU Directive 2001/29/EC on copyright.</p>
+    <p>Rights holders who believe their material has been used unlawfully through the Service may send formal notice to the designated DMCA agent:</p>
     <div class="highlight-box">
-      <h3>Permanent License (one-time payment)</h3>
-      <p>One-time payment for access to BurgTV app features.</p>
-      <p><strong>Price: CHF 25.90 (one-time)</strong></p>
+      <p><strong>DMCA Agent — BurgTV</strong></p>
+      <p>Email: <a href="mailto:info@burgtv.com" class="link">info@burgtv.com</a></p>
+      <p>Subject: "DMCA Notice"</p>
+      <p>Postal address: Via Rinaldo Simen 18, 6900 Lugano, Switzerland</p>
+    </div>
+    <p>For detailed DMCA notice procedure, counter-notice, and repeat infringer policy, see the dedicated <a href="/legal/dmca.html" class="link">DMCA Policy</a>.</p>
+    <p><strong>Note:</strong> BurgTV does not host any audiovisual content. DMCA notices should be directed directly to the content provider or the provider hosting the allegedly infringing material.</p>
+
+    <h2 id="en-t17">17. Warranties and Disclaimers</h2>
+    <div class="warn-box">
+      <p><strong>THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED.</strong></p>
+      <p>BurgTV disclaims all implied warranties of merchantability, fitness for a particular purpose, non-infringement of third-party rights, and accuracy. To the extent permitted by applicable law, BurgTV does not warrant that:</p>
+    </div>
+    <ul>
+      <li>The Service will meet specific User requirements;</li>
+      <li>The Service will be uninterrupted, timely, secure, or error-free;</li>
+      <li>Results obtainable through Service use will be accurate or reliable;</li>
+      <li>Application errors will be corrected;</li>
+      <li>The Service will be compatible with all devices or configurations.</li>
+    </ul>
+
+    <h2 id="en-t18">18. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law, BurgTV, its employees, suppliers, and partners shall in no event be liable for:</p>
+    <ul>
+      <li>Direct, indirect, incidental, special, consequential, punitive, or exemplary damages;</li>
+      <li>Loss of profits, loss of data, loss of goodwill, business interruption, or moral damages;</li>
+      <li>Damages arising from use of third-party content played through the Service;</li>
+      <li>Damages arising from security breaches not attributable to BurgTV;</li>
+      <li>Costs of procurement of substitute goods or services;</li>
+      <li>Unauthorized use of the User's account attributable to User negligence.</li>
+    </ul>
+    <p>Where applicable law does not allow total exclusion of liability, BurgTV's aggregate liability shall in any case be limited to the <strong>lesser of: (a) CHF 100; or (b) the amount actually paid by the User in the 12 months preceding the damaging event</strong>.</p>
+    <p>This limitation applies regardless of the legal nature of the action (contract, tort, statutory, or otherwise) and even if BurgTV had been advised of the possibility of such damages.</p>
+
+    <h2 id="en-t19">19. Indemnification</h2>
+    <p>The User agrees to indemnify and hold harmless BurgTV, its affiliates, officers, employees, and agents from any claim, demand, liability, damage, loss, cost, or expense (including reasonable legal fees) arising from or connected to:</p>
+    <ul>
+      <li>Breach of these Terms by the User;</li>
+      <li>Use of the Service by the User;</li>
+      <li>Content played by the User through the Service;</li>
+      <li>Violation of third-party rights by the User;</li>
+      <li>Negligence or unlawful conduct by the User.</li>
+    </ul>
+    <p>BurgTV reserves the right to assume exclusive defense of any claim subject to indemnification at the User's expense, with cooperation from the User.</p>
+
+    <h2 id="en-t20">20. Force Majeure</h2>
+    <p>BurgTV shall not be liable for delays or non-performance caused by force majeure events or public order, including without limitation: natural disasters, wars, terrorist acts, riots, embargoes, acts of civil or military authorities, fires, floods, pandemics, Internet outages, power blackouts, large-scale cyberattacks, third-party provider failures, legislative changes making Service provision impossible or illegal.</p>
+
+    <h2 id="en-t21">21. Apple App Store — Supplementary Terms</h2>
+    <p>The following terms apply exclusively to Users who downloaded the BurgTV Mobile application via Apple App Store:</p>
+    <ul>
+      <li>These Terms are concluded between the User and BurgTV, not with Apple. Apple is not responsible for the application or its content.</li>
+      <li>The license granted to the User is limited to use of the application on Apple devices owned or controlled by the User, as provided by App Store Usage Rules.</li>
+      <li>Apple has no obligation to provide maintenance or support services relating to the application.</li>
+      <li>In case of failure of the application to conform to applicable warranties, the User may notify Apple and Apple will refund the purchase price. Apple will have no further warranty obligations.</li>
+      <li>Apple is not responsible for: (i) User or third-party claims relating to the application; (ii) product liability; (iii) claims based on non-compliance with applicable laws; (iv) consumer protection law claims; (v) third-party intellectual property infringement claims.</li>
+      <li>The User represents not being located in US Government embargoed countries or designated as "terrorist-supporting", and not being listed on US Government prohibited or restricted lists.</li>
+      <li><strong>Apple, Inc. and its subsidiaries are third-party beneficiaries of these Terms</strong>. Upon User acceptance of the Terms, Apple will have the right (and will be deemed to have accepted such right) to enforce these Terms against the User as a third-party beneficiary.</li>
+    </ul>
+
+    <h2 id="en-t22">22. Google Play — Supplementary Terms</h2>
+    <p>Users who downloaded the application via Google Play are also subject to Google Play terms and Google policies. In case of conflict between these Terms and Google Play policies, these Terms will prevail solely regarding the relationship between User and BurgTV, while Google policies will prevail in the relationship between User and Google.</p>
+
+    <h2 id="en-t23">23. Amazon Appstore — Supplementary Terms</h2>
+    <p>Users who downloaded the application via Amazon Appstore are also subject to Amazon Appstore terms and Amazon policies. Updates and distribution of the application may be managed by Amazon per their policies.</p>
+
+    <h2 id="en-t24">24. Changes to the Terms</h2>
+    <p>BurgTV may update these Terms at any time to reflect regulatory, technical, commercial, or organizational changes. Material changes will be communicated via registered email and/or in-app notice at least <strong>30 days</strong> before their entry into force.</p>
+    <p>Continued use of the Service after entry into force of changes constitutes tacit acceptance. Users who do not accept changes must cease Service use before their entry into force. No pro-rata refund right exists in case of termination resulting from Terms changes, unless changes are substantially unfavorable to the User compared to pre-existing Terms.</p>
+
+    <h2 id="en-t25">25. Dispute Resolution</h2>
+
+    <h3>25.1 Preliminary negotiation (mandatory)</h3>
+    <p>Before initiating any legal proceeding, the User undertakes to attempt amicable resolution of the dispute by formally notifying BurgTV of the nature of the claim via email at <a href="mailto:info@burgtv.com" class="link">info@burgtv.com</a>. The Parties undertake to cooperate in good faith for at least <strong>60 days</strong> before resorting to court.</p>
+
+    <h3>25.2 Alternative Resolution (EU ODR)</h3>
+    <p>Consumers residing in the European Union may use the European Online Dispute Resolution platform (ODR): <a href="https://ec.europa.eu/consumers/odr" class="link" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.</p>
+
+    <h3>25.3 Arbitration Clause for US Residents</h3>
+    <div class="warn-box">
+      <p><strong>FOR UNITED STATES RESIDENTS:</strong></p>
+      <p>Any dispute, claim, or demand arising from or relating to these Terms or the Service will be resolved through <strong>binding individual arbitration</strong> under the Federal Arbitration Act (FAA), in accordance with the Commercial Rules of the American Arbitration Association (AAA). Arbitration will be held in English in Zurich, Switzerland, or online. No class action, collective action, or representative arbitration is allowed. The User waives the right to a court trial and the right to a jury trial.</p>
+      <p>The User may opt out of this arbitration clause by sending written notice to <a href="mailto:info@burgtv.com" class="link">info@burgtv.com</a> within 30 days of acceptance of these Terms.</p>
     </div>
 
-    <div class="important-clause">
-      <p><strong>⚠️ Important clause regarding Permanent License:</strong></p>
-      <p>The permanent license is a non-exclusive license to use the BurgTV app, valid for the duration of commercial availability of the service. The one-time payment refers exclusively to the payment method and does not constitute a right of perpetual access independent of the service's existence.</p>
+    <h2 id="en-t26">26. Governing Law and Jurisdiction</h2>
+    <p>These Terms are governed by and construed in accordance with the <strong>substantive laws of Switzerland</strong>, excluding conflict of laws rules and the United Nations Convention on Contracts for the International Sale of Goods (CISG).</p>
+    <p>Subject to the arbitration clause for US residents under Art. 25.3, the <strong>exclusive jurisdiction</strong> for any dispute is the courts of <strong>Lugano, Switzerland</strong>.</p>
+    <p>Mandatory consumer protection laws provided by the legislation of the consumer's country of residence remain applicable where more favorable.</p>
+
+    <h2 id="en-t27">27. Final Clauses</h2>
+    <h3>27.1 Assignment</h3>
+    <p>The User may not assign their rights and obligations under these Terms without BurgTV's prior written consent. BurgTV may freely assign its rights and obligations in connection with corporate reorganizations, mergers, acquisitions, or asset sales.</p>
+
+    <h3>27.2 Severability</h3>
+    <p>If any clause of these Terms is declared null, invalid, or unenforceable, the remaining clauses will retain full validity and effect.</p>
+
+    <h3>27.3 No waiver</h3>
+    <p>BurgTV's failure or delay in enforcing any right or provision of these Terms does not constitute waiver of such right or provision.</p>
+
+    <h3>27.4 Entire agreement</h3>
+    <p>These Terms, together with the Privacy Policy, Cookie Policy, Acceptable Use Policy, and DMCA Policy, constitute the entire agreement between the User and BurgTV regarding the Service and supersede any prior agreement, communication, representation, or understanding, oral or written.</p>
+
+    <h3>27.5 Notices</h3>
+    <p>Any formal communication from BurgTV to the User will be sent via email to the registered address. Any communication from the User to BurgTV must be sent to <a href="mailto:info@burgtv.com" class="link">info@burgtv.com</a>.</p>
+
+    <h3>27.6 Language of the contract</h3>
+    <p>These Terms are drafted in Italian and English. In case of discrepancy between versions, the <strong>Italian version</strong> will prevail, as the language of the country where the Controller is established. Versions in German, Spanish, and French are provided for informational purposes.</p>
+
+    <h3>27.7 Electronic signature</h3>
+    <p>Acceptance of these Terms via click on checkbox, account creation, application installation, or Service use equates to binding electronic signature under applicable legislation (EU eIDAS, Swiss electronic signature legislation).</p>
+
+    <h3>27.8 Export control</h3>
+    <p>The application and associated data may be subject to export control regulations (including, without limitation, US OFAC regulations, EU, and Swiss regulations). The User represents not being located in countries or regions subject to embargo or international sanctions and not being listed on prohibited persons lists.</p>
+
+    <h2 id="en-t28">28. Contact</h2>
+    <div class="highlight-box">
+      <p><strong>BurgTV</strong> — Sole proprietorship of Musa Bushi</p>
+      <p>Via Rinaldo Simen 18, 6900 Lugano, Switzerland</p>
+      <p><strong>Email:</strong> <a href="mailto:info@burgtv.com" class="link">info@burgtv.com</a></p>
+      <p><strong>Website:</strong> <a href="https://burgtv.com" class="link">burgtv.com</a></p>
     </div>
-
-    <h2>3. Account and Devices</h2>
-    <ul>
-      <li>Each license (annual or permanent) can be used on a maximum of <strong>5 devices</strong>.</li>
-      <li>Users can manage their devices from the dashboard at app.burgtv.com.</li>
-      <li>Sharing login credentials with third parties is not permitted.</li>
-      <li>One account per natural or legal person.</li>
-    </ul>
-
-    <h2>4. Payments and Refunds</h2>
-    <ul>
-      <li>Payments are processed securely via <strong>Stripe</strong>.</li>
-      <li>BurgTV does not store credit card data on its servers.</li>
-      <li><strong>No refunds</strong> are provided after activation of annual subscription or purchase of permanent license.</li>
-      <li>Annual subscription automatically renews at expiration unless cancelled.</li>
-    </ul>
-
-    <h2>5. Permitted Use</h2>
-    <ul>
-      <li>Users must have <strong>legal rights</strong> to view content played through the app.</li>
-      <li>Using the service for illegal activities or to infringe third-party copyrights is prohibited.</li>
-      <li>Users are solely responsible for content they view through the application.</li>
-    </ul>
-
-    <h2>6. Suspension and Revocation</h2>
-    <p>BurgTV reserves the right to suspend or revoke account access in case of:</p>
-    <ul>
-      <li>Violation of these Terms and Conditions</li>
-      <li>Abusive or fraudulent use of the service</li>
-      <li>Unauthorized sharing of credentials</li>
-      <li>Illegal or harmful activities</li>
-    </ul>
-    <p>Suspension or revocation may occur without notice and without right to refund.</p>
-
-    <h2>7. Limitations of Liability</h2>
-    <ul>
-      <li>The service is provided "as is" without guarantees of continuous or uninterrupted availability.</li>
-      <li>BurgTV is not responsible for third-party content viewed through the app.</li>
-      <li>BurgTV is not responsible for loss of user data, playlists, or settings.</li>
-      <li>BurgTV reserves the right to modify, suspend, or discontinue the service at any time.</li>
-    </ul>
-
-    <h2>8. Changes to Terms</h2>
-    <p>BurgTV may update these Terms and Conditions at any time. Significant changes will be communicated via email or in the application. Continued use of the service after changes constitutes acceptance of the new terms.</p>
-
-    <h2>9. Governing Law</h2>
-    <p>These Terms and Conditions are governed by the <strong>applicable law</strong> based on the user's jurisdiction.</p>
-    <p>For any dispute arising from the use of the service, the competent court shall be that of the user's place of residence, unless otherwise provided by law.</p>
-
-    <h2>10. Contact</h2>
-    <p>For questions, support, or reports: <a href="mailto:info@burgtv.com" class="link">info@burgtv.com</a></p>
   </div>
 
-  <!-- GERMAN -->
+  <!-- ==================== DEUTSCH ==================== -->
   <div id="content-de" class="card" style="display:none">
-    <h1>Allgemeine Geschäftsbedingungen</h1>
-    <p class="update-date">Letzte Aktualisierung: 23. Dezember 2025</p>
-    
-    <h2>1. Art des Dienstes</h2>
-    <p>BurgTV ist eine <strong>Softwareanwendung</strong>, die als <strong>Media Player</strong> für die Wiedergabe von Multimedia-Inhalten dient.</p>
-    <ul>
-      <li>BurgTV <strong>stellt KEINE Inhalte bereit, hostet oder verbreitet</strong> keine audiovisuellen Inhalte.</li>
-      <li>Nutzer verwenden ausschließlich eigene Inhalte oder Inhalte Dritter, für die sie die Rechte besitzen.</li>
-    </ul>
-
-    <h2>2. Pläne und Lizenzen</h2>
-    <div class="highlight-box">
-      <h3>Jahresabonnement</h3>
-      <p>Voller Zugang zu den BurgTV-App-Funktionen für <strong>12 Monate</strong>.</p>
-      <p><strong>Preis: CHF 8.90/Jahr</strong></p>
-      <p>Beinhaltet 7-tägige kostenlose Testversion.</p>
+    <h1>Allgemeine Geschaeftsbedingungen</h1>
+    <p class="update-date">Version 2.0 — Gueltig ab 14. April 2026</p>
+    <div class="warn-box">
+      <p><strong>⚠ WICHTIGER HINWEIS:</strong> BurgTV ist ein Media-Player-Software. <strong>BurgTV stellt keine Inhalte bereit, speichert, verteilt oder moderiert keine audiovisuellen Inhalte</strong>. Die App ist eine leere Huelle: Der Nutzer ist allein verantwortlich fuer die Bereitstellung eigener Medieninhalte und die Einhaltung der geltenden Urheberrechtsgesetze.</p>
     </div>
-    
-    <div class="highlight-box">
-      <h3>Permanente Lizenz (Einmalzahlung)</h3>
-      <p>Einmalige Zahlung für den Zugang zu den BurgTV-App-Funktionen.</p>
-      <p><strong>Preis: CHF 25.90 (einmalig)</strong></p>
-    </div>
-
-    <div class="important-clause">
-      <p><strong>⚠️ Wichtige Klausel zur Permanenten Lizenz:</strong></p>
-      <p>Die permanente Lizenz ist eine nicht-exklusive Nutzungslizenz für die BurgTV-App, gültig für die Dauer der kommerziellen Verfügbarkeit des Dienstes. Die Einmalzahlung bezieht sich ausschließlich auf die Zahlungsmethode und stellt kein Recht auf dauerhaften Zugang unabhängig von der Existenz des Dienstes dar.</p>
-    </div>
-
-    <h2>3. Konto und Geräte</h2>
-    <ul>
-      <li>Jede Lizenz (jährlich oder permanent) kann auf maximal <strong>5 Geräten</strong> verwendet werden.</li>
-      <li>Nutzer können ihre Geräte im Dashboard unter app.burgtv.com verwalten.</li>
-      <li>Die Weitergabe von Zugangsdaten an Dritte ist nicht gestattet.</li>
-      <li>Ein Konto pro natürliche oder juristische Person.</li>
-    </ul>
-
-    <h2>4. Zahlungen und Rückerstattungen</h2>
-    <ul>
-      <li>Zahlungen werden sicher über <strong>Stripe</strong> abgewickelt.</li>
-      <li>BurgTV speichert keine Kreditkartendaten auf eigenen Servern.</li>
-      <li><strong>Keine Rückerstattungen</strong> nach Aktivierung des Jahresabonnements oder Kauf der permanenten Lizenz.</li>
-      <li>Das Jahresabonnement verlängert sich automatisch bei Ablauf, sofern nicht gekündigt.</li>
-    </ul>
-
-    <h2>5. Erlaubte Nutzung</h2>
-    <ul>
-      <li>Der Nutzer muss die <strong>gesetzlichen Rechte</strong> besitzen, um die über die App wiedergegebenen Inhalte anzuzeigen.</li>
-      <li>Die Nutzung des Dienstes für illegale Aktivitäten oder zur Verletzung von Urheberrechten Dritter ist untersagt.</li>
-      <li>Der Nutzer ist allein verantwortlich für die Inhalte, die er über die Anwendung anzeigt.</li>
-    </ul>
-
-    <h2>6. Sperrung und Widerruf</h2>
-    <p>BurgTV behält sich das Recht vor, den Kontozugang in folgenden Fällen zu sperren oder zu widerrufen:</p>
-    <ul>
-      <li>Verstoß gegen diese Allgemeinen Geschäftsbedingungen</li>
-      <li>Missbräuchliche oder betrügerische Nutzung des Dienstes</li>
-      <li>Unbefugte Weitergabe von Zugangsdaten</li>
-      <li>Illegale oder schädliche Aktivitäten</li>
-    </ul>
-    <p>Die Sperrung oder der Widerruf kann ohne Vorankündigung und ohne Anspruch auf Rückerstattung erfolgen.</p>
-
-    <h2>7. Haftungsbeschränkungen</h2>
-    <ul>
-      <li>Der Dienst wird „wie besehen" ohne Garantie einer kontinuierlichen oder unterbrechungsfreien Verfügbarkeit bereitgestellt.</li>
-      <li>BurgTV ist nicht verantwortlich für Inhalte Dritter, die über die App angezeigt werden.</li>
-      <li>BurgTV ist nicht verantwortlich für den Verlust von Nutzerdaten, Playlists oder Einstellungen.</li>
-      <li>BurgTV behält sich das Recht vor, den Dienst jederzeit zu ändern, auszusetzen oder einzustellen.</li>
-    </ul>
-
-    <h2>8. Änderungen der AGB</h2>
-    <p>BurgTV kann diese AGB jederzeit aktualisieren. Wesentliche Änderungen werden per E-Mail oder in der Anwendung mitgeteilt. Die fortgesetzte Nutzung des Dienstes nach Änderungen gilt als Annahme der neuen Bedingungen.</p>
-
-    <h2>9. Anwendbares Recht</h2>
-    <p>Diese AGB unterliegen dem <strong>anwendbaren Recht</strong> basierend auf der Gerichtsbarkeit des Nutzers.</p>
-    <p>Für Streitigkeiten aus der Nutzung des Dienstes ist das Gericht am Wohnsitz des Nutzers zuständig, sofern gesetzlich nicht anders vorgesehen.</p>
-
-    <h2>10. Kontakt</h2>
-    <p>Für Fragen, Unterstützung oder Meldungen: <a href="mailto:info@burgtv.com" class="link">info@burgtv.com</a></p>
+    <p>Die vollstaendige Version der Allgemeinen Geschaeftsbedingungen ist in italienischer und englischer Sprache verfuegbar. Die wichtigsten Punkte umfassen: Vertragsnatur (Media-Player ohne eigene Inhalte), Nutzerverantwortung, Altersanforderungen (13+), Preise (BurgTV TV: CHF 8.90/Jahr oder CHF 25.90 lebenslang; BurgTV Mobile: CHF 1.50/Monat, CHF 4.90/Jahr oder CHF 14.90 lebenslang), automatische Verlaengerung, EU-Widerrufsrecht (14 Tage), DMCA-Verfahren, Haftungsbeschraenkung, Freistellung, Schiedsverfahren fuer US-Nutzer, anwendbares Recht (Schweiz), Gerichtsstand Lugano.</p>
+    <p><strong>Kontakt:</strong> <a href="mailto:info@burgtv.com" class="link">info@burgtv.com</a></p>
   </div>
 
-  <!-- SPANISH -->
+  <!-- ==================== ESPANOL ==================== -->
   <div id="content-es" class="card" style="display:none">
-    <h1>Términos y Condiciones</h1>
-    <p class="update-date">Última actualización: 23 de diciembre de 2025</p>
-    
-    <h2>1. Naturaleza del Servicio</h2>
-    <p>BurgTV es una <strong>aplicación de software</strong> que funciona como <strong>reproductor multimedia</strong>.</p>
-    <ul>
-      <li>BurgTV <strong>NO proporciona, aloja ni distribuye</strong> ningún contenido audiovisual.</li>
-      <li>Los usuarios utilizan exclusivamente contenido propio o de terceros sobre el cual tienen derechos.</li>
-    </ul>
-
-    <h2>2. Planes y Licencias</h2>
-    <div class="highlight-box">
-      <h3>Suscripción Anual</h3>
-      <p>Acceso completo a las funciones de BurgTV durante <strong>12 meses</strong>.</p>
-      <p><strong>Precio: CHF 8.90/año</strong></p>
-      <p>Incluye 7 días de prueba gratuita.</p>
+    <h1>Terminos y Condiciones del Servicio</h1>
+    <p class="update-date">Version 2.0 — Vigente desde el 14 de abril de 2026</p>
+    <div class="warn-box">
+      <p><strong>⚠ AVISO IMPORTANTE:</strong> BurgTV es un reproductor multimedia. <strong>BurgTV no proporciona, no almacena, no distribuye ni modera contenidos audiovisuales</strong>. La app es un contenedor vacio: el usuario es el unico responsable de proporcionar sus propios contenidos y cumplir con las leyes de derechos de autor aplicables.</p>
     </div>
-    
-    <div class="highlight-box">
-      <h3>Licencia Permanente (pago único)</h3>
-      <p>Pago único para acceder a las funciones de la app BurgTV.</p>
-      <p><strong>Precio: CHF 25.90 (único)</strong></p>
-    </div>
-
-    <div class="important-clause">
-      <p><strong>⚠️ Cláusula importante sobre la Licencia Permanente:</strong></p>
-      <p>La licencia permanente es una licencia de uso no exclusiva de la app BurgTV, válida durante la disponibilidad comercial del servicio. El pago único se refiere exclusivamente al método de pago y no constituye un derecho de acceso perpetuo independiente de la existencia del servicio.</p>
-    </div>
-
-    <h2>3. Cuenta y Dispositivos</h2>
-    <ul>
-      <li>Cada licencia (anual o permanente) puede usarse en un máximo de <strong>5 dispositivos</strong>.</li>
-      <li>Los usuarios pueden gestionar sus dispositivos desde el panel en app.burgtv.com.</li>
-      <li>No está permitido compartir las credenciales de acceso con terceros.</li>
-      <li>Una cuenta por persona física o jurídica.</li>
-    </ul>
-
-    <h2>4. Pagos y Reembolsos</h2>
-    <ul>
-      <li>Los pagos se procesan de forma segura mediante <strong>Stripe</strong>.</li>
-      <li>BurgTV no almacena datos de tarjetas de crédito en sus servidores.</li>
-      <li><strong>Sin reembolsos</strong> después de la activación de la suscripción anual o la compra de la licencia permanente.</li>
-      <li>La suscripción anual se renueva automáticamente al vencimiento, salvo cancelación.</li>
-    </ul>
-
-    <h2>5. Uso Permitido</h2>
-    <ul>
-      <li>El usuario debe tener los <strong>derechos legales</strong> para ver el contenido reproducido a través de la app.</li>
-      <li>Está prohibido utilizar el servicio para actividades ilegales o para infringir derechos de autor de terceros.</li>
-      <li>El usuario es el único responsable del contenido que visualiza a través de la aplicación.</li>
-    </ul>
-
-    <h2>6. Suspensión y Revocación</h2>
-    <p>BurgTV se reserva el derecho de suspender o revocar el acceso a la cuenta en caso de:</p>
-    <ul>
-      <li>Violación de estos Términos y Condiciones</li>
-      <li>Uso abusivo o fraudulento del servicio</li>
-      <li>Compartir credenciales sin autorización</li>
-      <li>Actividades ilegales o dañinas</li>
-    </ul>
-    <p>La suspensión o revocación puede ocurrir sin previo aviso y sin derecho a reembolso.</p>
-
-    <h2>7. Limitaciones de Responsabilidad</h2>
-    <ul>
-      <li>El servicio se proporciona "tal cual" sin garantías de disponibilidad continua o ininterrumpida.</li>
-      <li>BurgTV no es responsable del contenido de terceros visualizado a través de la app.</li>
-      <li>BurgTV no es responsable de la pérdida de datos, playlists o configuraciones del usuario.</li>
-      <li>BurgTV se reserva el derecho de modificar, suspender o interrumpir el servicio en cualquier momento.</li>
-    </ul>
-
-    <h2>8. Cambios en los Términos</h2>
-    <p>BurgTV puede actualizar estos Términos y Condiciones en cualquier momento. Los cambios significativos se comunicarán por correo electrónico o en la aplicación. El uso continuado del servicio después de los cambios constituye la aceptación de los nuevos términos.</p>
-
-    <h2>9. Ley Aplicable</h2>
-    <p>Estos Términos y Condiciones se rigen por la <strong>ley aplicable</strong> según la jurisdicción del usuario.</p>
-    <p>Para cualquier disputa derivada del uso del servicio, será competente el tribunal del lugar de residencia del usuario, salvo disposición legal en contrario.</p>
-
-    <h2>10. Contacto</h2>
-    <p>Para preguntas, asistencia o reportes: <a href="mailto:info@burgtv.com" class="link">info@burgtv.com</a></p>
+    <p>La version completa de los Terminos y Condiciones esta disponible en italiano e ingles. Los puntos principales incluyen: naturaleza del servicio (reproductor sin contenidos), responsabilidad del usuario, requisitos de edad (13+), precios (BurgTV TV: CHF 8.90/ano o CHF 25.90 permanente; BurgTV Mobile: CHF 1.50/mes, CHF 4.90/ano o CHF 14.90 permanente), renovacion automatica, derecho de desistimiento UE (14 dias), procedimiento DMCA, limitacion de responsabilidad, indemnizacion, arbitraje para residentes en EE.UU., ley aplicable (Suiza), jurisdiccion Lugano.</p>
+    <p><strong>Contacto:</strong> <a href="mailto:info@burgtv.com" class="link">info@burgtv.com</a></p>
   </div>
 
-  <!-- FRENCH -->
+  <!-- ==================== FRANCAIS ==================== -->
   <div id="content-fr" class="card" style="display:none">
-    <h1>Conditions Générales</h1>
-    <p class="update-date">Dernière mise à jour: 23 décembre 2025</p>
-    
-    <h2>1. Nature du Service</h2>
-    <p>BurgTV est une <strong>application logicielle</strong> fonctionnant comme <strong>lecteur multimédia</strong>.</p>
-    <ul>
-      <li>BurgTV <strong>NE fournit, n'héberge ni ne distribue</strong> aucun contenu audiovisuel.</li>
-      <li>Les utilisateurs utilisent exclusivement leur propre contenu ou celui de tiers dont ils détiennent les droits.</li>
-    </ul>
-
-    <h2>2. Plans et Licences</h2>
-    <div class="highlight-box">
-      <h3>Abonnement Annuel</h3>
-      <p>Accès complet aux fonctionnalités de BurgTV pendant <strong>12 mois</strong>.</p>
-      <p><strong>Prix: CHF 8.90/an</strong></p>
-      <p>Inclut 7 jours d'essai gratuit.</p>
+    <h1>Conditions Generales de Service</h1>
+    <p class="update-date">Version 2.0 — En vigueur le 14 avril 2026</p>
+    <div class="warn-box">
+      <p><strong>⚠ AVIS IMPORTANT:</strong> BurgTV est un lecteur multimedia. <strong>BurgTV ne fournit pas, n'heberge pas, ne distribue pas et ne modere pas de contenus audiovisuels</strong>. L'application est une coquille vide: l'utilisateur est seul responsable de fournir son propre contenu et de respecter les lois sur le droit d'auteur.</p>
     </div>
-    
-    <div class="highlight-box">
-      <h3>Licence Permanente (paiement unique)</h3>
-      <p>Paiement unique pour l'accès aux fonctionnalités de l'app BurgTV.</p>
-      <p><strong>Prix: CHF 25.90 (unique)</strong></p>
-    </div>
-
-    <div class="important-clause">
-      <p><strong>⚠️ Clause importante concernant la Licence Permanente:</strong></p>
-      <p>La licence permanente est une licence d'utilisation non exclusive de l'app BurgTV, valable pour la durée de disponibilité commerciale du service. Le paiement unique se réfère exclusivement au mode de paiement et ne constitue pas un droit d'accès perpétuel indépendant de l'existence du service.</p>
-    </div>
-
-    <h2>3. Compte et Appareils</h2>
-    <ul>
-      <li>Chaque licence (annuelle ou permanente) peut être utilisée sur un maximum de <strong>5 appareils</strong>.</li>
-      <li>Les utilisateurs peuvent gérer leurs appareils depuis le tableau de bord sur app.burgtv.com.</li>
-      <li>Le partage des identifiants de connexion avec des tiers n'est pas autorisé.</li>
-      <li>Un compte par personne physique ou morale.</li>
-    </ul>
-
-    <h2>4. Paiements et Remboursements</h2>
-    <ul>
-      <li>Les paiements sont traités de manière sécurisée via <strong>Stripe</strong>.</li>
-      <li>BurgTV ne stocke pas les données de carte bancaire sur ses serveurs.</li>
-      <li><strong>Aucun remboursement</strong> après activation de l'abonnement annuel ou achat de la licence permanente.</li>
-      <li>L'abonnement annuel se renouvelle automatiquement à l'expiration, sauf résiliation.</li>
-    </ul>
-
-    <h2>5. Utilisation Autorisée</h2>
-    <ul>
-      <li>L'utilisateur doit disposer des <strong>droits légaux</strong> pour visionner les contenus lus via l'application.</li>
-      <li>L'utilisation du service pour des activités illégales ou pour enfreindre les droits d'auteur de tiers est interdite.</li>
-      <li>L'utilisateur est seul responsable des contenus qu'il visionne via l'application.</li>
-    </ul>
-
-    <h2>6. Suspension et Révocation</h2>
-    <p>BurgTV se réserve le droit de suspendre ou révoquer l'accès au compte en cas de :</p>
-    <ul>
-      <li>Violation des présentes Conditions Générales</li>
-      <li>Utilisation abusive ou frauduleuse du service</li>
-      <li>Partage non autorisé des identifiants</li>
-      <li>Activités illégales ou nuisibles</li>
-    </ul>
-    <p>La suspension ou révocation peut intervenir sans préavis et sans droit à remboursement.</p>
-
-    <h2>7. Limitations de Responsabilité</h2>
-    <ul>
-      <li>Le service est fourni « en l'état » sans garantie de disponibilité continue ou ininterrompue.</li>
-      <li>BurgTV n'est pas responsable des contenus de tiers visionnés via l'application.</li>
-      <li>BurgTV n'est pas responsable de la perte de données, playlists ou paramètres de l'utilisateur.</li>
-      <li>BurgTV se réserve le droit de modifier, suspendre ou interrompre le service à tout moment.</li>
-    </ul>
-
-    <h2>8. Modifications des Conditions</h2>
-    <p>BurgTV peut mettre à jour ces Conditions Générales à tout moment. Les modifications significatives seront communiquées par e-mail ou dans l'application. L'utilisation continue du service après les modifications constitue l'acceptation des nouvelles conditions.</p>
-
-    <h2>9. Droit Applicable</h2>
-    <p>Les présentes Conditions Générales sont régies par le <strong>droit applicable</strong> selon la juridiction de l'utilisateur.</p>
-    <p>Pour tout litige découlant de l'utilisation du service, le tribunal compétent sera celui du lieu de résidence de l'utilisateur, sauf disposition légale contraire.</p>
-
-    <h2>10. Contact</h2>
-    <p>Pour toute question, assistance ou signalement : <a href="mailto:info@burgtv.com" class="link">info@burgtv.com</a></p>
+    <p>La version complete des Conditions Generales est disponible en italien et en anglais. Les points essentiels incluent: nature du service (lecteur sans contenu), responsabilite de l'utilisateur, exigences d'age (13+), prix (BurgTV TV: CHF 8.90/an ou CHF 25.90 permanent; BurgTV Mobile: CHF 1.50/mois, CHF 4.90/an ou CHF 14.90 permanent), renouvellement automatique, droit de retractation UE (14 jours), procedure DMCA, limitation de responsabilite, indemnisation, arbitrage pour residents des Etats-Unis, loi applicable (Suisse), juridiction de Lugano.</p>
+    <p><strong>Contact:</strong> <a href="mailto:info@burgtv.com" class="link">info@burgtv.com</a></p>
   </div>
+
 </div>
+
 <script>
-  const menuToggle=document.getElementById('menuToggle'),sidebar=document.getElementById('sidebar'),overlay=document.getElementById('overlay');
-  function toggleMenu(){menuToggle.classList.toggle('active');sidebar.classList.toggle('active');overlay.classList.toggle('active')}
-  menuToggle.addEventListener('click',toggleMenu);overlay.addEventListener('click',toggleMenu);
-  const contents={it:document.getElementById('content-it'),en:document.getElementById('content-en'),de:document.getElementById('content-de'),es:document.getElementById('content-es'),fr:document.getElementById('content-fr')};
-  const menuTr={it:{"menu.home":"Home","menu.login":"Accedi","menu.terms":"Termini di Servizio","menu.privacy":"Privacy Policy","menu.contact":"Contatti"},en:{"menu.home":"Home","menu.login":"Sign In","menu.terms":"Terms of Service","menu.privacy":"Privacy Policy","menu.contact":"Contact"},de:{"menu.home":"Startseite","menu.login":"Anmelden","menu.terms":"AGB","menu.privacy":"Datenschutz","menu.contact":"Kontakt"},es:{"menu.home":"Inicio","menu.login":"Acceder","menu.terms":"Términos","menu.privacy":"Privacidad","menu.contact":"Contacto"},fr:{"menu.home":"Accueil","menu.login":"Connexion","menu.terms":"Conditions","menu.privacy":"Confidentialité","menu.contact":"Contact"}};
-  function setLanguage(l){Object.values(contents).forEach(c=>{if(c)c.style.display='none'});if(contents[l])contents[l].style.display='block';document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));document.getElementById('btn-'+l).classList.add('active');if(menuTr[l])document.querySelectorAll('[data-i18n]').forEach(e=>{const k=e.getAttribute('data-i18n');if(menuTr[l][k])e.textContent=menuTr[l][k]});document.documentElement.lang=l;localStorage.setItem('preferredLang',l)}
-  document.getElementById('btn-it').onclick=()=>setLanguage('it');document.getElementById('btn-en').onclick=()=>setLanguage('en');document.getElementById('btn-de').onclick=()=>setLanguage('de');document.getElementById('btn-es').onclick=()=>setLanguage('es');document.getElementById('btn-fr').onclick=()=>setLanguage('fr');
-  setLanguage(localStorage.getItem('preferredLang')||'it');
+  const langs=['it','en','de','es','fr'];
+  langs.forEach(l=>{
+    document.getElementById('btn-'+l).addEventListener('click',()=>{
+      langs.forEach(x=>{
+        document.getElementById('content-'+x).style.display=(x===l?'block':'none');
+        document.getElementById('btn-'+x).classList.toggle('active',x===l);
+      });
+    });
+  });
+  const toggle=document.getElementById('menuToggle');
+  const sidebar=document.getElementById('sidebar');
+  const overlay=document.getElementById('overlay');
+  toggle.addEventListener('click',()=>{
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+    toggle.classList.toggle('active');
+  });
+  overlay.addEventListener('click',()=>{
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+    toggle.classList.remove('active');
+  });
 </script>
 </body>
 </html>
