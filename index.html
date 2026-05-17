@@ -371,5 +371,20 @@
   }
 });
 </script>
+<!-- Anonymous referrer tracking — no cookies, no PII. Falls under the
+     "aggregated and anonymous usage data" disclosure in privacy.html
+     (Art. 6(1)(f) — Legitimate interest, Service improvement). -->
+<script>
+(function(){
+  try {
+    fetch('https://api.burgtv.com/track-visit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ hostname: location.hostname, referrer: document.referrer || '' }),
+      keepalive: true
+    }).catch(function(){});
+  } catch(e) {}
+})();
+</script>
 </body>
 </html>
