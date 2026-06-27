@@ -303,11 +303,13 @@ const I18N_RTL = ["ar"];
           if (d[k] != null) el.innerHTML = d[k];
         });
         window.__heroWords = (d.hero_words || '').split('|').filter(Boolean);
-        // pagine legali: mostra il blocco lingua corrispondente (fallback EN/IT)
-        const blocks = document.querySelectorAll('.lang-block');
-        if (blocks.length) {
-          let target = document.getElementById('content-' + l) || document.getElementById('content-en') || document.getElementById('content-it') || blocks[0];
-          blocks.forEach((b) => b.classList.toggle('active', b === target));
+        // pagine legali: blocchi lingua per id content-<lang> (nascosti via display:none inline o classe .lang-block)
+        const _codes = I18N_LANGS.map((x) => x.code);
+        const _blocks = _codes.map((c) => [c, document.getElementById('content-' + c)]).filter((x) => x[1]);
+        if (_blocks.length) {
+          const _has = _blocks.some((b) => b[0] === l);
+          const _sel = _has ? l : (_blocks.some((b) => b[0] === 'en') ? 'en' : _blocks[0][0]);
+          _blocks.forEach(([c, el]) => { el.style.display = (c === _sel) ? '' : 'none'; el.classList.toggle('active', c === _sel); });
         }
         document.documentElement.lang = l;
         document.documentElement.dir = I18N_RTL.includes(l) ? 'rtl' : 'ltr';
