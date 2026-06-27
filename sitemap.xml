@@ -1,28 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://burgtv.com/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://download.burgtv.com/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://burgtv.com/legal/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://burgtv.com/legal/terms.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://burgtv.com/legal/privacy.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
+<url><loc>https://burgtv.com/</loc><priority>1.0</priority></url>
+<url><loc>https://burgtv.com/legal/</loc><priority>0.5</priority></url>
+<url><loc>https://burgtv.com/legal/terms</loc><priority>0.5</priority></url>
+<url><loc>https://burgtv.com/legal/privacy</loc><priority>0.5</priority></url>
+<url><loc>https://burgtv.com/legal/cookies</loc><priority>0.4</priority></url>
+<url><loc>https://burgtv.com/legal/aup</loc><priority>0.4</priority></url>
+<url><loc>https://burgtv.com/legal/dmca</loc><priority>0.4</priority></url>
+<url><loc>https://burgtv.com/legal/good-faith</loc><priority>0.4</priority></url>
+<url><loc>https://burgtv.com/legal/transparency</loc><priority>0.4</priority></url>
+<url><loc>https://burgtv.com/legal/delete-account</loc><priority>0.4</priority></url>
+<url><loc>https://burgtv.com/legal/faq</loc><priority>0.4</priority></url>
 </urlset>
