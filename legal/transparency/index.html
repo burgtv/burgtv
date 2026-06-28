@@ -355,7 +355,10 @@ const I18N_RTL = ["ar"];
       document.querySelectorAll('.lang-opt').forEach((o) =>
         o.addEventListener('click', () => {
           const l = o.dataset.lang;
-          apply(l); persist(l);
+          persist(l);
+          // Su pagine con versioni tradotte a URL diversi (landing SEO): vai alla versione nella lingua scelta
+          if (window.__seoAlt && window.__seoAlt[l]) { location.href = window.__seoAlt[l]; return; }
+          apply(l);
           const lang = document.getElementById('lang');
           if (lang) lang.classList.remove('open');
         })
