@@ -1,0 +1,43 @@
+# BurgTV
+
+> BurgTV is a media player app for your own IPTV playlists (M3U, Xtream Codes), Jellyfin servers and Stalker/MAG portals, on Fire TV, Google TV, Android TV, Android phones and tablets, iPhone and iPad. It is a neutral player: BurgTV does not provide, sell, host or distribute any channels or content. You bring your own legitimate source.
+
+BurgTV is developed in Switzerland. The app is available in 21 languages; the website in 11 (English, Italian, German, Spanish, French, Portuguese, Turkish, Dutch, Polish, Russian, Arabic). No ads. Analytics only with the user's consent. Payments via Stripe (TV) and the App Store (iPhone/iPad).
+
+## Key facts
+
+- Sources: M3U playlists, Xtream Codes, Jellyfin, Stalker/MAG portals. EPG/XMLTV TV guide.
+- TV app (Fire TV, Google TV, Android TV): full TV guide grid, "Tonight on TV", catch-up (when the source offers an archive), timeshift (pause and rewind live TV up to 60 minutes), Multi-View (up to 4 channels on one screen, 2 on low-memory devices), recordings, profiles with a Kids profile (age ratings), parental controls with PIN, sports calendar with reminders, trailers and "Check availability" (searches a title in your playlists), Picture-in-Picture.
+- Phones and tablets (Android, iPhone, iPad): live TV, movies and series, offline viewing from your own source when the source allows it, timeshift up to 120 minutes, Picture-in-Picture, subtitle delay, audio tracks. AirPlay on iPhone/iPad.
+- TV Premium: CHF 8.90 per year (7-day free trial) or CHF 25.90 one-time, up to 5 TVs per account. Free plan: 1 playlist, live TV, 3-day guide, 10 favourite channels, parental controls with PIN.
+- iPhone/iPad: free download with an optional in-app purchase on the App Store (price shown in the app in local currency).
+- Android phones/tablets: for now all features are included without purchase (the Android app is in testing and not yet on Google Play).
+- Not supported: new Fire TV devices running Vega OS (they cannot install Android APK files); BurgTV works on Fire TV devices with Fire OS.
+
+## Main pages
+
+- [Home](https://burgtv.com/en/): overview, devices, Free vs Premium
+- [All features, device by device](https://burgtv.com/en/features/)
+- [Best IPTV players compared (BurgTV, TiviMate, IPTV Smarters)](https://burgtv.com/en/best-iptv-players/)
+- [TiviMate alternative, also for iPhone and iPad](https://burgtv.com/en/tivimate-alternative/)
+- [IPTV player for iPhone and iPad](https://burgtv.com/en/iptv-player-iphone/)
+- [IPTV player for Fire TV Stick](https://burgtv.com/en/iptv-player-firestick/)
+- [IPTV player for Android TV and Google TV](https://burgtv.com/en/iptv-player-android-tv/)
+- [IPTV timeshift: pause and rewind live TV](https://burgtv.com/en/iptv-timeshift-pause-live-tv/)
+- [IPTV Multi-View](https://burgtv.com/en/iptv-multiview/)
+- [Record from your IPTV playlist](https://burgtv.com/en/record-iptv/)
+- [IPTV parental controls and Kids profile](https://burgtv.com/en/iptv-parental-controls/)
+- [Jellyfin on Fire TV and Google TV](https://burgtv.com/en/jellyfin-player-fire-tv/)
+- [Add an EPG (XMLTV) TV guide](https://burgtv.com/en/add-epg-xmltv-iptv/)
+- [Set up Xtream Codes](https://burgtv.com/en/how-to-set-up-xtream-codes/)
+- [Fix IPTV buffering](https://burgtv.com/en/fix-iptv-buffering/)
+
+## Download
+
+- [Download page (Fire TV, Google TV, Android APK)](https://download.burgtv.com/)
+- [App Store (iPhone and iPad)](https://apps.apple.com/app/id6761636987)
+
+## Legal and contact
+
+- [Terms and Privacy](https://burgtv.com/legal/)
+- Contact: info@burgtv.com
