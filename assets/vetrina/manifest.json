@@ -1,0 +1,198 @@
+{
+ "compositi": {
+  "vetrina-hero": {
+   "w": 3200,
+   "h": 2000
+  },
+  "funzione-01-ogni-schermo": {
+   "w": 3200,
+   "h": 2000
+  },
+  "funzione-02-guida-tv": {
+   "w": 3200,
+   "h": 2000
+  },
+  "funzione-03-timeshift-registrazioni": {
+   "w": 3200,
+   "h": 2000
+  },
+  "funzione-04-multiview": {
+   "w": 3200,
+   "h": 2000
+  },
+  "funzione-05-sport-promemoria": {
+   "w": 3200,
+   "h": 2000
+  },
+  "funzione-06-trailer-verifica": {
+   "w": 3200,
+   "h": 2000
+  },
+  "funzione-07-bambino-genitori": {
+   "w": 3200,
+   "h": 2000
+  },
+  "funzione-08-fonti-lingue": {
+   "w": 3200,
+   "h": 2000
+  },
+  "funzione-09-offline-telefono": {
+   "w": 3200,
+   "h": 2000
+  }
+ },
+ "schermate": {
+  "tv-bambino": {
+   "w": 1280,
+   "h": 720,
+   "sizes": [
+    1280,
+    640
+   ]
+  },
+  "tv-eta": {
+   "w": 1280,
+   "h": 720,
+   "sizes": [
+    1280,
+    640
+   ]
+  },
+  "tv-pin": {
+   "w": 1280,
+   "h": 720,
+   "sizes": [
+    1280,
+    640
+   ]
+  },
+  "tv-profili": {
+   "w": 1280,
+   "h": 720,
+   "sizes": [
+    1280,
+    640
+   ]
+  },
+  "tv-guida": {
+   "w": 1280,
+   "h": 720,
+   "sizes": [
+    1280,
+    640
+   ]
+  },
+  "tv-multiview": {
+   "w": 1280,
+   "h": 720,
+   "sizes": [
+    1280,
+    640
+   ]
+  },
+  "tv-timeshift": {
+   "w": 1280,
+   "h": 720,
+   "sizes": [
+    1280,
+    640
+   ]
+  },
+  "tv-fonti": {
+   "w": 1280,
+   "h": 720,
+   "sizes": [
+    1280,
+    640
+   ]
+  },
+  "tv-player": {
+   "w": 1280,
+   "h": 720,
+   "sizes": [
+    1280,
+    640
+   ]
+  },
+  "tv-stasera": {
+   "w": 1280,
+   "h": 720,
+   "sizes": [
+    1280,
+    640
+   ]
+  },
+  "tv-promemoria": {
+   "w": 1280,
+   "h": 720,
+   "sizes": [
+    1280,
+    640
+   ]
+  },
+  "tv-canali": {
+   "w": 1280,
+   "h": 720,
+   "sizes": [
+    1280,
+    640
+   ]
+  },
+  "tv-lingue": {
+   "w": 1280,
+   "h": 720,
+   "sizes": [
+    1280,
+    640
+   ]
+  },
+  "ph-home": {
+   "w": 560,
+   "h": 1247,
+   "sizes": [
+    560,
+    280
+   ]
+  },
+  "ph-offline": {
+   "w": 560,
+   "h": 1247,
+   "sizes": [
+    560,
+    280
+   ]
+  },
+  "ph-detail": {
+   "w": 560,
+   "h": 1247,
+   "sizes": [
+    560,
+    280
+   ]
+  },
+  "ph-promemoria": {
+   "w": 560,
+   "h": 1247,
+   "sizes": [
+    560,
+    280
+   ]
+  },
+  "tb-home": {
+   "w": 1100,
+   "h": 688,
+   "sizes": [
+    1100,
+    640
+   ]
+  },
+  "tb-detail": {
+   "w": 1100,
+   "h": 688,
+   "sizes": [
+    1100,
+    640
+   ]
+  }
+ }
+}
