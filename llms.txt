@@ -2,21 +2,24 @@
 
 > BurgTV is a media player app for your own IPTV playlists (M3U, Xtream Codes), Jellyfin servers and Stalker/MAG portals, on Fire TV, Google TV, Android TV, Android phones and tablets, iPhone and iPad. It is a neutral player: BurgTV does not provide, sell, host or distribute any channels or content. You bring your own legitimate source.
 
+Last updated: 2026-10-10. Current public versions: TV app 1.3.6 (Fire TV, Google TV, Android TV), Android phone/tablet app 1.1.18, iPhone/iPad app 1.0.11 (App Store).
+
 BurgTV is developed in Switzerland. The app is available in 21 languages; the website in 11 (English, Italian, German, Spanish, French, Portuguese, Turkish, Dutch, Polish, Russian, Arabic). No ads. Analytics only with the user's consent. Payments via Stripe (TV) and the App Store (iPhone/iPad).
 
 ## Key facts
 
 - Sources: M3U playlists, Xtream Codes, Jellyfin, Stalker/MAG portals. EPG/XMLTV TV guide.
-- TV app (Fire TV, Google TV, Android TV): full TV guide grid, "Tonight on TV", catch-up (when the source offers an archive), timeshift (pause and rewind live TV up to 60 minutes), Multi-View (up to 4 channels on one screen, 2 on low-memory devices), recordings, profiles with a Kids profile (age ratings), parental controls with PIN, sports calendar with reminders, trailers and "Check availability" (searches a title in your playlists), Picture-in-Picture.
+- TV app (Fire TV, Google TV, Android TV): full TV guide grid, "Tonight on TV", catch-up (when the source offers an archive), timeshift (pause and rewind live TV up to 60 minutes), Multi-View (up to 4 channels on one screen, 2 on low-memory devices), recordings, profiles with a Kids profile (age ratings), parental controls with PIN (free: PIN, minimum age, single-channel blocking; daily limit and viewing hours are set per profile, so they need Premium), sports calendar with reminders, trailers and "Check availability" (searches a title in your playlists), Picture-in-Picture.
 - Phones and tablets (Android, iPhone, iPad): live TV, movies and series, offline viewing from your own source when the source allows it, timeshift up to 120 minutes, Picture-in-Picture, subtitle delay, audio tracks. AirPlay on iPhone/iPad.
-- TV Premium: CHF 8.90 per year (7-day free trial) or CHF 25.90 one-time, up to 5 TVs per account. Free plan: 1 playlist, live TV, 3-day guide, 10 favourite channels, parental controls with PIN.
-- iPhone/iPad: free download with an optional in-app purchase on the App Store (price shown in the app in local currency).
+- TV Premium: license bought on app.burgtv.com, CHF 8.90 per year (7-day free trial) or CHF 25.90 one-time, valid on TVs only, up to 5 TVs per account. Free plan: 1 playlist, live TV, 3-day guide, 10 favorite channels, parental controls with PIN.
+- iPhone/iPad: free download with an optional in-app purchase on the App Store (price shown in the app in local currency); the website license does not apply on iPhone/iPad.
 - Android phones/tablets: for now all features are included without purchase (the Android app is in testing and not yet on Google Play).
 - Not supported: new Fire TV devices running Vega OS (they cannot install Android APK files); BurgTV works on Fire TV devices with Fire OS.
 
 ## Main pages
 
 - [Home](https://burgtv.com/en/): overview, devices, Free vs Premium
+- [Product FAQ](https://burgtv.com/en/#faq): short answers (price, devices, sources, Premium, privacy)
 - [All features, device by device](https://burgtv.com/en/features/)
 - [Best IPTV players compared (BurgTV, TiviMate, IPTV Smarters)](https://burgtv.com/en/best-iptv-players/)
 - [TiviMate alternative, also for iPhone and iPad](https://burgtv.com/en/tivimate-alternative/)
@@ -39,5 +42,6 @@ BurgTV is developed in Switzerland. The app is available in 21 languages; the we
 
 ## Legal and contact
 
-- [Terms and Privacy](https://burgtv.com/legal/)
+- [Legal (all documents)](https://burgtv.com/legal/)
+- Terms and Privacy for each app: [TV from download.burgtv.com](https://burgtv.com/legal/terms/), [TV from Google Play](https://burgtv.com/legal/play/terms/), [iPhone and iPad](https://burgtv.com/legal/ios/terms/), [Android phones and tablets](https://burgtv.com/legal/android/terms/)
 - Contact: info@burgtv.com

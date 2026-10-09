@@ -16,6 +16,16 @@
       "source": "/legal/:doc(terms|privacy|cookies|aup|dmca|good-faith|transparency|delete-account|faq).html",
       "destination": "/legal/:doc/",
       "statusCode": 301
+    },
+    {
+      "source": "/pt/como-abrir-ficheiro-m3u",
+      "destination": "/pt/como-abrir-arquivo-m3u/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/como-abrir-ficheiro-m3u/",
+      "destination": "/pt/como-abrir-arquivo-m3u/",
+      "statusCode": 301
     }
   ],
   "headers": [
