@@ -10,7 +10,9 @@ BurgTV is developed in Switzerland. The app is available in 21 languages; the we
 
 - Sources: M3U playlists, Xtream Codes, Jellyfin, Stalker/MAG portals. EPG/XMLTV TV guide.
 - TV app (Fire TV, Google TV, Android TV): full TV guide grid, "Tonight on TV", catch-up (when the source offers an archive), timeshift (pause and rewind live TV up to 60 minutes), Multi-View (up to 4 channels on one screen, 2 on low-memory devices), recordings, profiles with a Kids profile (age ratings), parental controls with PIN (free: PIN, minimum age, single-channel blocking; daily limit and viewing hours are set per profile, so they need Premium), sports calendar with reminders, trailers and "Check availability" (searches a title in your playlists), Picture-in-Picture.
-- Phones and tablets (Android, iPhone, iPad): live TV, movies and series, offline viewing from your own source when the source allows it, timeshift up to 120 minutes, Picture-in-Picture, subtitle delay, audio tracks. AirPlay on iPhone/iPad.
+- Android phones and tablets (app 1.1.18): live TV, movies and series, offline viewing from your own source when the source allows it, timeshift up to 120 minutes (15, 30, 60 or 120), Picture-in-Picture, subtitle delay, audio tracks.
+- iPhone and iPad (app 1.0.11 on the App Store): live TV, movies and series, offline viewing from your own source when the source allows it, Picture-in-Picture, AirPlay, audio tracks. No timeshift and no subtitle delay in this version.
+- Not on phones and tablets: Multi-View, recordings, profiles and the Kids profile (TV only).
 - TV Premium: license bought on app.burgtv.com, CHF 8.90 per year (7-day free trial) or CHF 25.90 one-time, valid on TVs only, up to 5 TVs per account. Free plan: 1 playlist, live TV, 3-day guide, 10 favorite channels, parental controls with PIN.
 - iPhone/iPad: free download with an optional in-app purchase on the App Store (price shown in the app in local currency); the website license does not apply on iPhone/iPad.
 - Android phones/tablets: for now all features are included without purchase (the Android app is in testing and not yet on Google Play).
