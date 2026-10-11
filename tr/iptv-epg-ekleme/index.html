@@ -20,6 +20,7 @@ const codes = ["it","en","de","es","fr","pt","tr","nl","pl","ru","ar"];
         document.querySelectorAll('a.lang-opt[data-lang]').forEach(function (a) { a.addEventListener('click', function () { persist(a.dataset.lang); }); });
         try {
           var m = document.cookie.match(/(?:^|;\s*)burgtv_lang=([a-z]{2})/), want = m && m[1];
+          if (!want) { var sv = localStorage.getItem('lang'); if (sv && codes.indexOf(sv) >= 0) want = sv; }
           if (!want) { var ns = navigator.languages || [navigator.language || '']; for (var i = 0; i < ns.length; i++) { var c = (ns[i] || '').slice(0, 2).toLowerCase(); if (codes.indexOf(c) >= 0) { want = c; break; } } }
           if (!want || want === pageLang || !alt[want] || sessionStorage.getItem('lb_x')) return;
           var bar = document.getElementById('langbar'); if (!bar) return;
