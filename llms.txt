@@ -8,7 +8,7 @@ BurgTV is developed in Switzerland. The app is available in 21 languages; the we
 
 ## Key facts
 
-- Sources: M3U playlists, Xtream Codes, Jellyfin, Stalker/MAG portals. EPG/XMLTV TV guide.
+- Sources: M3U playlists (added from a link, http or https; local .m3u files are not imported), Xtream Codes, Jellyfin, Stalker/MAG portals. EPG/XMLTV TV guide: automatic from Xtream Codes or from url-tvg in the playlist; on the TV, additional XMLTV sources (Settings > TV Guide) fill in channels without a guide; time shift -12 to +12 hours per playlist. Portals do not provide a guide.
 - TV app (Fire TV, Google TV, Android TV): full TV guide grid, "Tonight on TV", catch-up (when the source offers an archive), timeshift (pause and rewind live TV up to 120 minutes: 15, 30, 60 or 120; shorter if storage is low), Multi-View (up to 4 channels on one screen, 2 on low-memory devices), recordings, profiles with a Kids profile (age ratings), parental controls with PIN (free: PIN, minimum age, single-channel blocking; daily limit and viewing hours are set per profile, so they need Premium), sports calendar with reminders, trailers and "Check availability" (searches a title in your playlists), Picture-in-Picture. New in 1.3.7: recordings and scheduled recordings belong to the profile that creates them; a title appears in "Continue watching" after 5 seconds of real viewing; Settings > Theme > Full-screen transition (Automatic, Zoom, Fade); lighter updates (one APK per device architecture).
 - Android phones and tablets (app 1.2.1): live TV, movies and series, offline viewing from your own source when the source allows it, timeshift (pause and rewind live TV up to 120 minutes: 15, 30, 60 or 120, same as the TV app; shorter if storage is low), Picture-in-Picture, subtitle delay, audio tracks.
 - iPhone and iPad (app 1.0.15 on the App Store): live TV, movies and series, offline viewing from your own source when the source allows it, timeshift (pause and rewind live TV up to 120 minutes: 15, 30, 60 or 120, default 30; shorter if storage is low), Picture-in-Picture, AirPlay, subtitle delay, audio tracks. A title appears in "Continue watching" after 5 seconds of real viewing.
@@ -36,6 +36,13 @@ BurgTV is developed in Switzerland. The app is available in 21 languages; the we
 - [Add an EPG (XMLTV) TV guide](https://burgtv.com/en/add-epg-xmltv-iptv/)
 - [Set up Xtream Codes](https://burgtv.com/en/how-to-set-up-xtream-codes/)
 - [Fix IPTV buffering](https://burgtv.com/en/fix-iptv-buffering/)
+- [All guides, by device, source and problem](https://burgtv.com/en/guides/)
+- [How to open an M3U or M3U8 file](https://burgtv.com/en/how-to-open-m3u-file/)
+- [Stalker/MAG portal on TV and iPhone](https://burgtv.com/en/stalker-portal-mag/)
+- [Fire TV with Vega OS: which models can install an IPTV player](https://burgtv.com/en/fire-tv-vega-os/)
+- [BurgTV or IPTV Smarters: an honest comparison (checked 2026-10-11)](https://burgtv.com/en/iptv-smarters-alternative/)
+- [What's new: release notes for TV, Android and iPhone](https://burgtv.com/en/changelog/)
+- [About BurgTV](https://burgtv.com/en/about/)
 
 ## Download
 
