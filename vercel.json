@@ -2,6 +2,16 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/tv",
+      "destination": "https://app.burgtv.com/collega",
+      "statusCode": 302
+    },
+    {
+      "source": "/tv/",
+      "destination": "https://app.burgtv.com/collega",
+      "statusCode": 302
+    },
+    {
       "source": "/:path(.*)",
       "has": [
         {
