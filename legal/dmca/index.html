@@ -1268,4 +1268,17 @@ const I18N_RTL = ["ar"];
           })
         );
       })();
-    })();</script> </body> </html>  
+    })();</script> <!-- 31/10: conteggio visite (pannello admin, "Visite reali"). Una volta per sessione della scheda, senza cookie,
+       senza dati personali: solo il nome del sito e il dominio da cui si arriva. Il server scarta bot e nomi estranei. --> <script>
+    (function () {
+      try {
+        if (navigator.webdriver || sessionStorage.getItem('bv_v')) return;
+        sessionStorage.setItem('bv_v', '1');
+        // REVISIONE 31/10: si manda solo l'origine della provenienza (mai percorso o parametri della pagina di arrivo)
+        var ref = ''; try { ref = document.referrer ? new URL(document.referrer).origin : ''; } catch (e) {}
+        var body = JSON.stringify({ hostname: location.hostname.replace(/^www\./, ''), referrer: ref });
+        if (navigator.sendBeacon) navigator.sendBeacon('https://api.burgtv.com/track-visit', body);
+        else fetch('https://api.burgtv.com/track-visit', { method: 'POST', body: body, keepalive: true, credentials: 'omit' });
+      } catch (e) { /* mai bloccare la pagina */ }
+    })();
+  </script> </body> </html>  
